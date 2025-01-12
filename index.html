@@ -180,7 +180,7 @@
         /* Media Queries for smaller screens */
         @media (max-width: 768px) {
             .history {
-                height: 150px; 
+                height: 150px; /* Reduce height for tablets */
                 font-size: 0.9rem;
             }
         }
@@ -219,6 +219,9 @@
         </div>
 
         <button id="startButton">Start</button>
+
+        <!-- Review Area Button -->
+        <button id="reviewAreaButton" onclick="window.location.href='review.html'">Review Area</button>
     </div>
 
     <div class="container" id="flashcardContainer" style="display: none;">
