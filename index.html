@@ -156,6 +156,36 @@
             font-size: 1rem;
         }
 
+        /* Media Queries for smaller screens */
+        @media (max-width: 768px) {
+            .history {
+                width: 200px; /* Reduce width for tablets and small screens */
+                padding: 15px;
+            }
+
+            .history h2 {
+                font-size: 1.2rem;
+            }
+
+            .history li {
+                font-size: 0.9rem; /* Smaller font size for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .history {
+                width: 150px; /* Further reduce width for mobile devices */
+                padding: 10px;
+            }
+
+            .history h2 {
+                font-size: 1rem; /* Smaller heading size */
+            }
+
+            .history li {
+                font-size: 0.8rem; /* Even smaller font size for mobile */
+            }
+        }
     </style>
 </head>
 <body>
