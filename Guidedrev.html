@@ -188,8 +188,15 @@
                 resultMessage.style.color = 'red';
             }
             updateScore(); // Update the score tracker
+
+            // Disable all buttons after selecting an answer
+            const buttons = document.querySelectorAll('.choices button');
+            buttons.forEach(button => {
+                button.disabled = true;
+            });
+
             nextQuestionButton.style.display = 'block';
-        }
+            }
 
         // Load the next question
         nextQuestionButton.addEventListener('click', generateQuestion);
