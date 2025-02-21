@@ -19,7 +19,12 @@ const typeOfIVFOrder = [
     "D10NS 1L",
     "D5RL 1L",
     "D50W 250cc",
-    "PNSS 250cc"
+    "PNSS 250cc",
+    "D5H2O-1L x 2 bottles",
+    "0.9% NaCl 500 cc x2",
+    "FWB 500cc x2",
+    "PLR 1L x2",
+    "D5O3 Nacl 500ml x2"
   ];
   
   // gttsPerMin.js
@@ -43,7 +48,12 @@ const typeOfIVFOrder = [
     12,
     30,
     25,
-    20
+    20,
+    30,
+    50,
+    20-21,
+    31-32,
+    40
   ];
   
   // ccPerHr.js
@@ -67,7 +77,12 @@ const typeOfIVFOrder = [
     60,
     120,
     135,
-    105
+    105,
+    90,
+    50,
+    125,
+    125,
+    120
   ];
   
   // levelReceived.js
@@ -91,31 +106,41 @@ const typeOfIVFOrder = [
     520,
     910,
     930,
-    890
+    890,
+    450,
+    100,
+    500,
+    1000,
+    360
   ];
   
   // timeToConsume.js
   const timeToConsume = [
-    "8 hrs",
-    "10 hrs",
-    "8.5 hrs",
-    "6 hrs",
-    "7 hrs",
-    "6.5 hrs",
-    "10 hrs",
-    "8.5 hrs",
-    "9 hrs",
-    "7.5 hrs",
-    "7.5 hrs",
-    "9.5 hrs",
-    "8 hrs",
-    "6.5 hrs",
-    "6.8 hrs",
-    "6.2 hrs",
-    "9.5 hrs",
-    "7.8 hrs",
-    "8.7 hrs",
-    "7.2 hrs"
+    "3:00 AM",
+    "5:00 AM",
+    "4:30 AM",
+    "1:00 AM",
+    "2:00 AM",
+    "12:30 AM",
+    "5:00 AM",
+    "4:30 AM",
+    "6:00 AM",
+    "2:30 AM",
+    "2:30 AM",
+    "5:30 AM",
+    "4:00 AM",
+    "1:30 AM",
+    "1:50 AM",
+    "1:10 AM",
+    "5:30 AM",
+    "3:45 AM",
+    "4:40 AM",
+    "2:10 AM",
+    "12:00 PM",
+    "09:00 AM",
+    "11:00 AM",
+    "03:00 PM",
+    "10:00 AM"
   ];
   
   // levelToEndorse.js
@@ -139,7 +164,12 @@ const typeOfIVFOrder = [
     260,
     290,
     330,
-    310
+    310,
+    730,
+    "None consumed",
+    "None consumed",
+    1000,
+    "None consumed"
   ];
   
   // timeToFollowUp.js
@@ -163,7 +193,12 @@ const typeOfIVFOrder = [
     "4:50 PM",
     "2:45 PM",
     "3:10 PM",
-    "4:15 PM"
+    "4:15 PM",
+    "12:00 PM",
+    "09:00 AM",
+    "11:00 AM",
+    "03:00 PM",
+    "10:00 AM"
   ];
   
   // dropFactor.js
@@ -187,7 +222,13 @@ const typeOfIVFOrder = [
     16,
     18,
     20,
-    23
+    23,
+    20,
+    60,
+    10,
+    15,
+    20
+
   ];
   
   // dfc.js
@@ -211,5 +252,10 @@ const typeOfIVFOrder = [
     3.1,
     2.7,
     2.9,
-    2.8
+    2.8,
+    3,
+    1,
+    6,
+    4,
+    3
   ];
