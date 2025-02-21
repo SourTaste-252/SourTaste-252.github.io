@@ -1,0 +1,113 @@
+/* Fullscreen, engaging layout */
+body {
+    font-family: 'Arial Black', sans-serif;
+    background: linear-gradient(135deg, #2196F3, #00BCD4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    overflow-x: hidden;
+}
+
+/* Main content box */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    width: 95%;
+    max-width: 900px;
+    text-align: center;
+    overflow-x: auto;
+}
+
+/* Title styling */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Table layout for mobile */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+thead {
+    background-color: #333;
+    color: rgb(255, 255, 255);
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #000000;
+    text-align: center;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Ensure inputs fit inside table cells */
+.hidden-input {
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.wrong-answer {
+    background-color: red !important;
+    color: white;
+    font-weight: bold;
+}
+
+/* Responsive Pagination */
+.pagination {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Bubble-style buttons */
+.menu-button {
+    text-decoration: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.3);
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.quiz { background-color: #FF5722; }
+.review { background-color: #4CAF50; }
+
+.menu-button:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+.exit {
+    background-color: #f44336; /* Red color */
+    margin-top: 15px;
+}
