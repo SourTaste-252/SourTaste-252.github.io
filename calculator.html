@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosage Calculator</title>
+    <link rel="stylesheet" href="calculator-style.css">
+    <script defer src="calculator.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Dosage Calculator</h1>
+
+        <!-- Liquid to Solid Volume Conversion -->
+        <div class="calc-section">
+            <h2>📏 Liquid to Solid Volume</h2>
+            <label for="liquidVolume">Liquid Volume (mL):</label>
+            <input type="number" id="liquidVolume">
+            
+            <label for="concentration">Concentration (mg/mL):</label>
+            <input type="number" id="concentration">
+            
+            <label for="strength">Required Strength (mg):</label>
+            <input type="number" id="strength">
+            
+            <button class="menu-button calculate" onclick="calculateLiquidToSolid()">Calculate</button>
+            <p id="liquidResult"></p>
+        </div>
+
+        <!-- Dosage Calculation -->
+        <div class="calc-section">
+            <h2>💊 Dosage Calculation</h2>
+            <label for="orderedDose">Ordered Dose (mg):</label>
+            <input type="number" id="orderedDose">
+            
+            <label for="availableDose">Available Dose (mg):</label>
+            <input type="number" id="availableDose">
+            
+            <label for="availableForm">Available Form (mL/tablets):</label>
+            <input type="number" id="availableForm">
+            
+            <button class="menu-button calculate" onclick="calculateDosage()">Calculate</button>
+            <p id="dosageResult"></p>
+        </div>
+
+        <a href="Pharmareview.html" class="menu-button exit">Exit</a>
+    </div>
+
+</body>
+</html>

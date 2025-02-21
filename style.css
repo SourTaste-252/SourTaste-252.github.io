@@ -1,0 +1,68 @@
+/* Fullscreen, engaging layout */
+body {
+    font-family: 'Arial Black', sans-serif;
+    background: linear-gradient(135deg, #2196F3, #00BCD4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+/* Main content box */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* Title styling */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Menu layout */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Bubble-style buttons */
+.menu-button {
+    text-decoration: none;
+    width: 180px; /* Slightly longer */
+    height: 70px; /* Less round */
+    border-radius: 35px; /* Softly rounded */
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.3);
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Button colors */
+.quiz { background-color: #FF5722; }       /* Orange */
+.review { background-color: #4CAF50; }    /* Green */
+.calculator { background-color: #673AB7; } /* Purple */
+
+/* Hover effect */
+.menu-button:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
