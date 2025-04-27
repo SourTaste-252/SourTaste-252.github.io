@@ -17,5 +17,5 @@ function changeShape() {
 setInterval(changeShape, 500);
 
 setTimeout(() => {
-    href = 'home.html';
+    window.location.href = 'home.html';
   }, 4000);
