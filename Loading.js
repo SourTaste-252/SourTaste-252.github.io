@@ -1,6 +1,7 @@
 let shapeIndex = 0;
 const shapes = ['circle', 'square', 'diamond'];
 const shapeElement = document.getElementById('shape');
+const redirectLink = document.getElementById('redirectLink');
 
 function changeShape() {
     // Remove all shape classes
@@ -13,9 +14,10 @@ function changeShape() {
     shapeIndex = (shapeIndex + 1) % shapes.length;
 }
 
-// Change shape every 1 second (1000ms)
+// Change shape every 500ms
 setInterval(changeShape, 500);
 
+// Automatically redirect after 4 seconds
 setTimeout(() => {
-    window.location.href = 'home.html';
-  }, 4000);
+    window.location.href = redirectLink.href;  // Redirect to the href of the <a> tag
+}, 4000);
