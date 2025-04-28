@@ -12,6 +12,7 @@
 .backgroundPic::before {
     content: '';
     position: absolute;
+    width: 100%;
     top: 0;
     left: 0;
     right: 0;
@@ -45,6 +46,7 @@
     position: absolute;
     background-color: rgb(255, 255, 255);
     color: azure;
+    width: 100%;
     padding: 12px 20px;
     display: flex;
     top: 700px;
