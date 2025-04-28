@@ -1,0 +1,61 @@
+/* General styling */
+body {
+    font-family: 'Arial Black', sans-serif;
+    background: linear-gradient(135deg, #2196F3, #00BCD4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+/* Container with shadow and border */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    color: black;
+}
+
+/* Menu styling */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Oval-Shaped Buttons */
+.menu-button {
+    text-decoration: none;
+    width: 180px; /* Slightly longer */
+    height: 80px; /* Adjusted height */
+    border-radius: 35px; /* Less round */
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.3);
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Button Colors */
+.drug { background-color: #FF9800; }  /* Orange */
+.iv { background-color: #03A9F4; }    /* Blue */
+.exit { background-color: #d32f2f; }  /* Red */
+
+/* Hover Effects */
+.menu-button:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}

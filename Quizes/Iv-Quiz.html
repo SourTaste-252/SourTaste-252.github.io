@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IV Data Table Quiz</title>
+    <link rel="stylesheet" href="IV-style.css">
+    <script src="IV-data.js" defer></script>
+    <script>
+        let currentPage = 0;
+        const rowsPerPage = 5;
+        let tableData = [];
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof typeOfIVFOrder !== 'undefined') {
+                tableData = typeOfIVFOrder.map((order, index) => ({
+                    typeOfIVFOrder: order,
+                    gttsPerMin: gttsPerMin[index],
+                    ccPerHr: ccPerHr[index],
+                    levelReceived: levelReceived[index],
+                    timeToConsume: timeToConsume[index],
+                    levelToEndorse: levelToEndorse[index],
+                    timeToFollowUp: timeToFollowUp[index],
+                    dropFactor: dropFactor[index],
+                    dfc: dfc[index]
+                }));
+    
+                shuffleArray(tableData); // 🔄 Randomize order
+                displayTable();
+            }
+        });
+    
+        // 🔄 Shuffle function to randomize the array order
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+    
+        function displayTable() {
+            const tableBody = document.getElementById("table-body");
+            tableBody.innerHTML = "";
+    
+            let start = currentPage * rowsPerPage;
+            let end = Math.min(start + rowsPerPage, tableData.length);
+    
+            for (let i = start; i < end; i++) {
+                let row = tableData[i];
+                let tr = document.createElement("tr");
+    
+                Object.keys(row).forEach((key) => {
+                    let td = document.createElement("td");
+    
+                    if (key === "typeOfIVFOrder") {
+                        td.textContent = row[key]; // Always visible
+                    } else {
+                        let randomHide = Math.random() < 0.3;
+                        let createInput = false;
+    
+                        if (key === "gttsPerMin" || key === "ccPerHr") {
+                            if (randomHide) {
+                                createInput = true;
+                                let siblingKey = key === "gttsPerMin" ? "ccPerHr" : "gttsPerMin";
+                                row[siblingKey] = row[siblingKey]; // Ensure one remains visible
+                            }
+                        } else if (randomHide) {
+                            createInput = true;
+                        }
+    
+                        if (createInput) {
+                            let input = document.createElement("input");
+                            input.type = "text";
+                            input.dataset.answer = row[key];
+                            input.classList.add("hidden-input");
+                            td.appendChild(input);
+                        } else {
+                            td.textContent = row[key];
+                        }
+                    }
+    
+                    tr.appendChild(td);
+                });
+    
+                tableBody.appendChild(tr);
+            }
+        }
+    
+        function checkAnswers() {
+            document.querySelectorAll(".hidden-input").forEach(input => {
+                if (input.value.trim() === input.dataset.answer.toString()) {
+                    input.style.backgroundColor = "lightgreen";
+                } else {
+                    input.classList.add("wrong-answer");
+                    input.value = input.dataset.answer;
+                }
+            });
+        }
+    
+        function nextPage() {
+            if ((currentPage + 1) * rowsPerPage < tableData.length) {
+                currentPage++;
+                displayTable();
+            }
+        }
+    
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                displayTable();
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>IV Data Table Quiz</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type of IVF Order</th>
+                        <th>Gtts Per Min</th>
+                        <th>CC Per Hr</th>
+                        <th>Level Received</th>
+                        <th>Time to Consume</th>
+                        <th>Level to Endorse</th>
+                        <th>Time to Follow Up</th>
+                        <th>Drop Factor</th>
+                        <th>DFC</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+        
+        <div class="pagination">
+            <button class="menu-button quiz" onclick="prevPage()">Previous</button>
+            <button class="menu-button quiz" onclick="nextPage()">Next</button>
+        </div>
+        
+        <button class="menu-button review" onclick="checkAnswers()">Submit Answers</button>
+
+        <a href="PharmaQuiz.html" class="menu-button exit">Exit</a>
+
+    </div>
+</body>
+</html>
