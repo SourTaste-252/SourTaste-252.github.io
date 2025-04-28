@@ -1,5 +1,6 @@
 .backgroundPic {
-    position: absolute;
+    position: relative;
+    overflow: hidden;
     width: 100%;
     margin-top: 20px;
 }
@@ -23,7 +24,8 @@
 }
 .slides {
     display: flex;
-    width: max-content;
+    flex-shrink: 0;
+    min-width: 8000;
     animation: scroll 40s linear infinite;
     align-items: center;
     position: relative;
@@ -84,18 +86,6 @@
 .boxes:nth-child(3) {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.306));
     background-color: rgb(0, 191, 255);
-}
-
-@media (max-width: 768px) {
-    .mainBar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .boxes {
-        width: 80%;
-        margin: 10px 0;
-    }
 }
 
 .cardContainer {
