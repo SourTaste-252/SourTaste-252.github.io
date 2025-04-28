@@ -24,7 +24,6 @@
 }
 .slides {
     display: flex;
-    flex-shrink: 0;
     min-width: 8000;
     animation: scroll 40s linear infinite;
     align-items: center;
