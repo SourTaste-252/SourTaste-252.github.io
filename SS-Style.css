@@ -24,8 +24,9 @@
 }
 .slides {
     display: flex;
+    flex-shrink: 0;
     min-width: 8000;
-    animation: scroll 40s linear infinite;
+    animation: scroll 10s linear infinite;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -47,7 +48,7 @@
     position: absolute;
     background-color: rgb(255, 255, 255);
     color: azure;
-    width: 100%;
+    width: fit-content;
     padding: 12px 20px;
     display: flex;
     top: 700px;
