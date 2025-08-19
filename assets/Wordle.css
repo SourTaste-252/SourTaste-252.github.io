@@ -11,10 +11,13 @@
 }
 
 .wordle-title {
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Verdana', 'Arial', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
     margin-bottom: 15px;
-    color: #0f959c;
+    letter-spacing: 0.05em;
+    color: #538d4e;
+    text-transform: uppercase;
 }
 
 .grid {
@@ -261,3 +264,4 @@ body.dark-mode .key.absent {
     background: #565758 !important;
     border-color: #565758 !important;
 }
+
