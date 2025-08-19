@@ -302,13 +302,13 @@ footer {
 
 .folder img.sticker {
     position: absolute;
-    bottom: 28px;       /* adjust position */
-    left: 10px;      /* adjust position */
-    width: 32px;     /* adjust size */
-    height: auto;    /* optional, keeps aspect ratio if needed */
-    opacity: 1;    /* subtle watermark effect */
-    pointer-events: none; /* allows clicks on text */
-    z-index: 0;      /* behind the text */
+    bottom: 28px;       /* adjust vertical position behind text */
+    left: 10px;         /* horizontal position */
+    width: 32px;        /* sticker size */
+    height: auto;       /* keep aspect ratio */
+    opacity: 1;       /* subtle effect behind text */
+    pointer-events: none; /* allows clicks on link */
+    z-index: 0;         /* behind text */
 }
 
 .folder:hover {
@@ -322,6 +322,7 @@ footer {
 }
 
 .folder-link {
+    gap: 2px;
     font-size: 1.1rem;
     font-weight: 600;
     color: #072E33;
@@ -331,11 +332,25 @@ footer {
     box-shadow: 0 1px 4px 0 rgba(15,149,156,0.06);
     transition: background 0.2s, color 0.2s;
     margin-left: 0;
+    position: relative; /* ensure text is above the sticker */
+    z-index: 1;
+    display: inline-block;
+}
+
+.folder-link img.sticker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;        /* adjust size */
+    height: auto;       /* maintain aspect ratio */
+    opacity: 1;       /* subtle effect */
 }
 
 .folder-link:hover {
     color: #0f959c;
 }
+
 
 
 
@@ -453,6 +468,7 @@ footer {
         text-shadow: 0 0 6px #0f959c, 0 0 12px #0f959c, 0 0 20px #6c5ce7;
     }
     
+
 
 
 
