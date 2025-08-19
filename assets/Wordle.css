@@ -192,7 +192,7 @@ body.dark-mode .wordle-container {
 }
 
 body.dark-mode .wordle-title {
-    color: #4fd1c5; /* softer teal for dark bg */
+    color: #538d4e; /* softer teal for dark bg */
 }
 
 body.dark-mode .tile {
@@ -264,4 +264,5 @@ body.dark-mode .key.absent {
     background: #565758 !important;
     border-color: #565758 !important;
 }
+
 
