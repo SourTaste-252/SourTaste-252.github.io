@@ -23,6 +23,9 @@
     transition: transform 0.3s, box-shadow 0.3s;
     backdrop-filter: blur(6px);
     -webkit-tap-highlight-color: transparent;
+    outline: none;
+    -webkit-user-select: none; /* prevent text selection */
+    -webkit-touch-callout: none; /* disable callout menu */
 }
 
 .jar.open::after {
@@ -185,4 +188,5 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     animation: popStrip 0.8s ease-out forwards;
 }
+
 
