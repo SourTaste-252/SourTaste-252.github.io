@@ -330,22 +330,24 @@ footer {
 
  /* Dark Mode Button */
     .darkmode-toggle {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: #0f959c;
-      color: #fff;
-      border: none;
-      font-size: 1.5rem;
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 2000;
-      transition: background 0.3s ease, transform 0.2s ease;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        background: #0f959c;
+        color: #fff;
+        border: none;
+        font-size: 32px;
+        line-height: 0.5;
+        border-radius: 50%;
+        width: 21px;
+        height: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2000;
+        transition: background 0.3s ease, transform 0.2s ease;
+        padding: 0;
     }
 
     .darkmode-toggle:hover {
@@ -440,4 +442,5 @@ footer {
         text-shadow: 0 0 6px #0f959c, 0 0 12px #0f959c, 0 0 20px #6c5ce7;
     }
     
+
 
