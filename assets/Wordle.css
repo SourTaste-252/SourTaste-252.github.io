@@ -2,8 +2,8 @@
     background: #fff;
     border-radius: 20px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-    padding: 3px 18px 25px;
-    max-width: 360px;
+    padding: 3px 25px 25px;
+    max-width: 430px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -20,14 +20,15 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 3px;
+    gap: 12px;
     justify-content: center;
+    justify-self: center;
     margin: 0 auto 18px;
 }
 
 .tile {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     border: 2px solid #e0e0e0;
     display: flex;
     align-items: center;
@@ -86,17 +87,17 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
 }
 
 .key-row {
     display: flex;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
 }
 
 .key {
@@ -104,7 +105,7 @@
     border: 2px solid #e0e0e0;
     border-radius: 10px;
     padding: 6px 5px;
-    min-width: 26px;
+    min-width: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,7 +117,7 @@
     transition: background 0.2s, transform 0.1s;
     color: #072E33;
     user-select: none;
-    max-width: 45px;
+    max-width: 36px;
 }
 
 .key:active {
