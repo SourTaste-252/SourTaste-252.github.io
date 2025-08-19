@@ -6,4 +6,8 @@
     letter-spacing: 0.05em;
     color: #538d4e;
     text-transform: uppercase;
+
+}
+.body.dark-mode .wordle {
+    color: #538d4e;
 }
