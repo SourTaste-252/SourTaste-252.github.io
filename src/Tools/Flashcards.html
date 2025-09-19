@@ -8,27 +8,267 @@
         <link rel="stylesheet" href="../../assets/FolderStyles.css">
         <link rel="stylesheet" href="../../assets/FlashcardStyles.css">
 
+        <title>Arrange — Research Steps</title>
+        <style>
+        /* Scoped widget styles to avoid clashing with site's CSS */
+        #arrange-app { --bg:#04101a; --card:#0b1420; --accent:#6ee7b7; --muted:#9aa7b3; --ok:#34d399; --bad:#ff6b6b;
+            margin:14px auto; padding:12px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); box-shadow:0 8px 24px rgba(0,0,0,0.5); max-width:980px; color:#e6eef6;
+        }
+        #arrange-app .header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+        #arrange-app .title{font-weight:800;font-size:18px}
+        #arrange-app .sub{font-size:13px;color:var(--muted)}
+        #arrange-app .list{margin-top:12px;padding:8px;border-radius:12px;background:rgba(255,255,255,0.02);min-height:220px}
+        #arrange-app .item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.02);cursor:grab;user-select:none}
+        #arrange-app .item.dragging{opacity:0.45;transform:scale(0.985);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+        #arrange-app .handle{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;font-weight:800}
+        #arrange-app .controls{display:flex;gap:8px;margin-top:12px}
+        #arrange-app .btn{flex:1;padding:10px;border-radius:10px;border:none;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));color:var(--accent);font-weight:700}
+        #arrange-app .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+        #arrange-app .preview{margin-top:10px;font-size:13px;color:var(--muted)}
+        #arrange-app .result{margin-top:12px;padding:10px;border-radius:10px;display:none}
+        #arrange-app .result.ok{display:block;background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.18);color:var(--ok)}
+        #arrange-app .result.bad{display:block;background:rgba(255,107,107,0.08);border:1px solid rgba(255,107,107,0.12);color:var(--bad)}
+        #arrange-app .small{font-size:13px;color:var(--muted)}
+        @media (min-width:700px){#arrange-app .item{padding:16px}}
+        </style>
     </head>
 
-    <body class = "body">
-        <div class = "top-container">
-            <img src = "../../assets/Icons/Logo.png" alt="LOGO">
+    <body class="body">
+        <div class="top-container">
+            <img src="../../assets/Icons/Logo.png" alt="LOGO">
             <button class="darkmode-toggle" id="darkmode-btn">◐</button>
-            <div class = "navbar">
-                <a href = "/src/Pages/Subjects.html"><span>Subjects</span></a>
-                <a href = "/index.html"><span>Home</span></a>
-                <a href = "/src/Pages/Tools.html"><span>Tools</span></a>
+            <div class="navbar">
+                <a href="/src/Pages/Subjects.html"><span>Subjects</span></a>
+                <a href="/index.html"><span>Home</span></a>
+                <a href="/src/Pages/Tools.html"><span>Tools</span></a>
             </div>
         </div>
 
         <main class="main-content">
-            <span>Under Construction, Thank you for the patience!</span>
+            <!-- Arrange widget inserted here -->
+            <section id="arrange-app" aria-labelledby="arrange-title">
+                <div class="header">
+                    <div>
+                        <div id="arrange-title" class="title">Arrange the research steps</div>
+                        <div class="sub">Drag each item into the order you provided. Mobile-friendly touch dragging.</div>
+                    </div>
+                    <div class="small">Progress saved locally</div>
+                </div>
+
+                <div id="arrange-list" class="list" aria-label="sortable list"></div>
+
+                <div class="controls">
+                    <button id="arrange-shuffle" class="btn ghost" type="button">Shuffle</button>
+                    <button id="arrange-check" class="btn" type="button">Check Order</button>
+                    <button id="arrange-show" class="btn ghost" type="button">Show Answer</button>
+                </div>
+
+                <div id="arrange-result" class="result"></div>
+                <div class="preview small">Tip: long-press (hold) an item then drag to reorder. You can also focus an item and use Space + Arrow keys for keyboard reordering.</div>
+            </section>
         </main>
+
         <footer>&copy; Atie, Lawrence James. All rights reserved</footer>
+
+        <script src="../../js/darkmode.js"></script>
+        <script src="../../js/Flashcards.js"></script>
+
+        <!-- Arrange widget script (self-contained) -->
+        <script>
+        (function(){
+            const CORRECT = [
+              "Identify the problem",
+              "Determine the purpose of the study",
+              "Review the Literature",
+              "Develop a theoretical/conceptual framework",
+              "Identify The study assumptions",
+              "Acknowledge the limitations of the study",
+              "Formulate the hypothesis or research question",
+              "Define the study variables/terms",
+              "Select the research design",
+              "Identify the population",
+              "Select the sample",
+              "Conduct a pilot study",
+              "Collect data",
+              "Organize the data for analysis",
+              "Analyze the data",
+              "Interpret findings",
+              "Communicate the findings",
+              "Utilize the findings"
+            ];
+
+            const STORAGE_KEY = 'arrange_steps_v1';
+            const listEl = document.getElementById('arrange-list');
+            const resultEl = document.getElementById('arrange-result');
+            const shuffleBtn = document.getElementById('arrange-shuffle');
+            const checkBtn = document.getElementById('arrange-check');
+            const showBtn = document.getElementById('arrange-show');
+
+            function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i], a[j]] = [a[j], a[i]] } return a; }
+
+            function load(){ try{ const raw = localStorage.getItem(STORAGE_KEY); if(raw){ const arr = JSON.parse(raw); if(Array.isArray(arr) && arr.length === CORRECT.length) return arr; } }catch(e){} const copy = CORRECT.slice(); return shuffle(copy); }
+
+            let current = load();
+
+            function save(){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(current)); }catch(e){} }
+
+            function render(){
+                listEl.innerHTML = '';
+                current.forEach((text, idx) => {
+                    const it = document.createElement('div');
+                    it.className = 'item';
+                    it.tabIndex = 0;
+                    it.draggable = false;
+                    it.dataset.index = idx;
+                    it.innerHTML = `<div class="handle" aria-hidden="true">☰</div><div style="flex:1">${text}</div>`;
+                    listEl.appendChild(it);
+                });
+                attachDragHandlers();
+            }
+
+            // Pointer & touch-based drag + keyboard support
+            function attachDragHandlers(){
+                let draggingEl = null;
+                let placeholder = null;
+                let startY = 0;
+                let offsetY = 0;
+
+                function createPlaceholder(h){
+                    const ph = document.createElement('div');
+                    ph.className = 'item placeholder';
+                    ph.style.height = h + 'px';
+                    ph.style.border = '2px dashed rgba(255,255,255,0.04)';
+                    ph.style.background = 'transparent';
+                    return ph;
+                }
+
+                function onPointerDown(e){
+                    const target = e.currentTarget;
+                    e.preventDefault();
+                    draggingEl = target;
+                    startY = (e.clientY || (e.touches && e.touches[0].clientY));
+                    const rect = draggingEl.getBoundingClientRect();
+                    offsetY = startY - rect.top;
+                    draggingEl.classList.add('dragging');
+
+                    placeholder = createPlaceholder(rect.height);
+                    draggingEl.parentNode.insertBefore(placeholder, draggingEl.nextSibling);
+
+                    const clone = draggingEl.cloneNode(true);
+                    clone.style.position = 'fixed';
+                    clone.style.left = rect.left + 'px';
+                    clone.style.top = rect.top + 'px';
+                    clone.style.width = rect.width + 'px';
+                    clone.style.zIndex = 9999;
+                    clone.style.pointerEvents = 'none';
+                    clone.classList.add('dragging');
+                    document.body.appendChild(clone);
+                    draggingEl._clone = clone;
+
+                    const move = (ev) => {
+                        const y = (ev.clientY || (ev.touches && ev.touches[0].clientY));
+                        clone.style.top = (y - offsetY) + 'px';
+
+                        // find a place to insert placeholder
+                        const items = Array.from(listEl.querySelectorAll('.item')).filter(n => n !== draggingEl && n !== placeholder);
+                        for (let it of items) {
+                            const r = it.getBoundingClientRect();
+                            const mid = r.top + r.height / 2;
+                            if (y < mid) {
+                                listEl.insertBefore(placeholder, it);
+                                break;
+                            } else {
+                                if (it === items[items.length - 1]) listEl.appendChild(placeholder);
+                            }
+                        }
+                    };
+
+                    const up = () => {
+                        // place element where placeholder is
+                        listEl.insertBefore(draggingEl, placeholder);
+                        draggingEl.classList.remove('dragging');
+                        if (draggingEl._clone) { document.body.removeChild(draggingEl._clone); draggingEl._clone = null; }
+                        if (placeholder && placeholder.parentNode) placeholder.parentNode.removeChild(placeholder);
+                        current = Array.from(listEl.querySelectorAll('.item')).map(n => n.textContent.replace('☰', '').trim());
+                        save();
+                        window.removeEventListener('pointermove', move);
+                        window.removeEventListener('pointerup', up);
+                        window.removeEventListener('touchmove', move);
+                        window.removeEventListener('touchend', up);
+                        draggingEl = null;
+                        placeholder = null;
+                    };
+
+                    window.addEventListener('pointermove', move);
+                    window.addEventListener('pointerup', up);
+                    window.addEventListener('touchmove', move, { passive: false });
+                    window.addEventListener('touchend', up);
+                }
+
+                const items = Array.from(listEl.querySelectorAll('.item'));
+                items.forEach(it => {
+                    // long-press to start drag (shorten for responsive feel)
+                    let pressTimer = null;
+                    const start = (e) => { e.preventDefault(); pressTimer = setTimeout(() => onPointerDown.call(it, e), 180); };
+                    const cancel = () => { if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; } };
+
+                    it.addEventListener('pointerdown', start);
+                    it.addEventListener('pointerup', cancel);
+                    it.addEventListener('pointercancel', cancel);
+                    it.addEventListener('touchstart', start, { passive: false });
+                    it.addEventListener('touchend', cancel);
+
+                    // keyboard support: space to pick up / arrows to move
+                    it.addEventListener('keydown', (ev) => {
+                        if (ev.key === ' ' || ev.key === 'Spacebar') {
+                            ev.preventDefault();
+                            it.classList.toggle('dragging');
+                        } else if (ev.key === 'ArrowUp' || ev.key === 'ArrowDown') {
+                            ev.preventDefault();
+                            const index = Array.from(listEl.children).indexOf(it);
+                            const swapWith = ev.key === 'ArrowUp' ? index - 1 : index + 1;
+                            if (swapWith >= 0 && swapWith < listEl.children.length) {
+                                if (ev.key === 'ArrowUp') listEl.insertBefore(it, listEl.children[swapWith]);
+                                else listEl.insertBefore(listEl.children[swapWith], it);
+                                current = Array.from(listEl.querySelectorAll('.item')).map(n => n.textContent.replace('☰', '').trim());
+                                save();
+                            }
+                        }
+                    });
+                });
+            }
+
+            shuffleBtn.addEventListener('click', () => {
+                current = shuffle(CORRECT.slice());
+                render();
+                resultEl.style.display = 'none';
+                save();
+            });
+
+            checkBtn.addEventListener('click', () => {
+                const correct = current.every((v, i) => v === CORRECT[i]);
+                if (correct) {
+                    resultEl.className = 'result ok';
+                    resultEl.textContent = 'Perfect — all items are in the correct order!';
+                } else {
+                    let idx = current.findIndex((v, i) => v !== CORRECT[i]);
+                    if (idx === -1) idx = current.length - 1;
+                    resultEl.className = 'result bad';
+                    resultEl.textContent = 'Not yet — first incorrect item at position ' + (idx + 1) + '. Keep going!';
+                }
+            });
+
+            showBtn.addEventListener('click', () => {
+                if (!confirm('Show the correct order? This will replace your current arrangement.')) return;
+                current = CORRECT.slice();
+                render();
+                resultEl.className = 'result ok';
+                resultEl.textContent = 'Shown correct order.';
+                save();
+            });
+
+            render();
+        })();
+        </script>
     </body>
-
-
-    
-    <script src="../../js/darkmode.js"></script>
-    <script src="../../js/Flashcards.js"></script>
 </html>
