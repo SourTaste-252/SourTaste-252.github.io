@@ -600,6 +600,21 @@ body.dark-mode .quiz-title {
     border-bottom: 2px solid gray;
 }
 
+/* 🌙 Dark mode support */
+body.dark-mode .blank-input {
+    color: #fff; /* white text */
+    border-bottom: 2px solid #aaa; /* lighter border for contrast */
+}
+
+body.dark-mode .blank-input:focus {
+    border-bottom: 2px solid #4fc3f7; /* light blue accent */
+}
+
+body.dark-mode .blank-input[disabled] {
+    color: #777;
+    border-bottom: 2px solid #555;
+}
+
 .quiz-buttons {
   margin-top: 20px;
   display: flex;
@@ -731,3 +746,4 @@ button {
     -moz-user-select: none;    /* Firefox support */
     -ms-user-select: none;     /* Old Edge/IE support */
 }
+
