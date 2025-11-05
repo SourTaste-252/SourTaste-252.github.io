@@ -1,3 +1,8 @@
+body {
+    min-height: fit-content;
+    overflow: hidden;
+}
+
 /* Main layout grid */
 .main-content {
     display: grid;
