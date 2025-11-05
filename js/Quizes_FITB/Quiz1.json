@@ -1,0 +1,108 @@
+{
+  "paragraphs": [
+    {
+        "id": 1,
+        "text": "1. 'Before' entering 'operating room' or 'treatment' 'area', apply 'cap', 'face mask', 'eye wear' and 'foot covers' ('paper' or 'cloth cover' fits over 'work shoes')",
+        "rationale": "Prevents hair and droplet nuclei from contaminating sterile areas. Eyewear protects mucous membrane of eye. Foot covers reduce contamination from shoes."
+    },
+    {
+        "id": 2,
+        "text": "2. Perform 'thorough surgical hand wash'.",
+        "rationale": "Removes transient and resident bacteria from fingers, hands and forearms."
+    },
+    {
+        "id": 3,
+        "text": "3. 'Circulating nurse' assists by 'opening sterile pack' containing 'sterile gown' (folded 'inside out')",
+        "rationale": "Removes transient and resident bacteria from fingers, hands and forearms."
+    },
+    {
+        "id": 4,
+        "text": "4. 'Circulating nurse' prepares 'glove package' by 'peeling outer wrapper open' while 'keeping inner content sterile'. Places 'inner glove package' on 'sterile field' created by 'sterile outer wrapper'.",
+        "rationale": "Keeps gloves sterile and allows nurse who has scrubbed to handle sterile items."
+    },
+    {
+        "id": 5,
+        "text": "5. Reach down to 'sterile gown package': lift 'folded gown' directly 'upward' and step back 'away from table'.",
+        "rationale": "Provides wide margin of safety, avoiding contamination of gown."
+    },
+    {
+        "id": 6,
+        "text": "6. Holding 'folded gown', locate 'neckband'. With 'both hands' grasp 'inside front of gown' just below 'neckband'.",
+        "rationale": "Clean hands can touch inside of gown without contaminating outer surface."
+    },
+    {
+        "id": 7,
+        "text": "7. Allow 'gown' to 'unfold', keeping 'inside' of 'gown' toward 'body'. Do not touch 'outside' of 'gown' with 'bare hands'.",
+        "rationale": "Outside of gown is sterile surface."
+    },
+    {
+        "id": 8,
+        "text": "8. With 'hands' at 'shoulder level', slip 'both arms' into 'armholes' 'simultaneously'. Ask 'circulating nurse' to bring 'gown' over your 'shoulders' by 'reaching inside' to 'arm seams' and 'pulling gown on', leaving 'sleeves' covering 'hands'. ",
+        "rationale": "Careful application prevents contamination. Gown covers hands to prepare for closed gloving."
+    },
+    {
+        "id": 9,
+        "text": "9. Have circulating nurse securely tie back of gown at neck and waist. (If gown is wraparound style, do not touch sterile sleeves covering hands.)",
+        "rationale": "Gowns must completely enclose underlying garments."
+    },
+    {
+        "title": "PERFORMING CLOSED GLOVING"
+    },
+    {
+        "id": 10,
+        "text": "10. 'Closed Gloving'"
+    },
+    {
+        "id": 101,
+        "text": "&nbsp;&nbsp;&nbsp;&nbsp;a. With 'left hand', pick up 'right glove' by 'slipping right hand' into 'glove cuff'.",
+        "rationale": "Hands remain clean. Sterile gown cuff touches sterile glove surface."
+    },
+    {
+        "id": 102,
+        "text": "&nbsp;&nbsp;&nbsp;&nbsp;b. With 'dominant hand' inside 'gown cuff', pick up 'glove' for 'nondominant hand' by grasping 'folded cuff'.",
+        "rationale": "Sterile gown touches sterile glove."
+    },
+    {
+        "id": 103,
+        "text": "&nbsp;&nbsp;&nbsp;&nbsp;c. Extend 'nondominant forearm' with 'palm up' and place 'palm' of 'glove' against 'palm' of 'nondominant hand'. Glove 'fingers' point 'toward elbow'.",
+        "rationale": "Positions glove for application over cuffed hand, keeping glove sterile."
+    },
+    {
+        "id": 104,
+        "text": "&nbsp;&nbsp;&nbsp;&nbsp;d. Grasp 'back' of 'glove cuff' with 'covered' 'dominant hand' and turn 'glove cuff' 'over end' of 'nondominant hand' and 'gown cuff'.",
+        "rationale": "Seal created by glove cuff over gown prevents exit of microorganism over operative sterile field."
+    },
+    {
+        "id": 105,
+        "text": "&nbsp;&nbsp;&nbsp;&nbsp;e. Grasp 'top of glove' and 'underlying gown sleeve' with 'covered' 'dominant hand'. 'Carefully' 'extends fingers' into 'glove'. Keep 'hand inside sleeve'."
+    },
+    {
+        "id": 106,
+        "text": "&nbsp;&nbsp;&nbsp;&nbsp;f. Glove 'dominant hand' in 'same manner', 'reversing hands'. Use 'gloved' 'nondominant hand' to 'pull on glove'. Keep 'hand inside sleeve'.",
+        "rationale": "Sterile touches sterile."
+    },
+    {
+        "id": 107,
+        "text": "&nbsp;&nbsp;&nbsp;&nbsp;g. Be sure that 'fingers' are 'fully extended' into 'both gloves'.",
+        "rationale": "Ensures that burse has full dexterity while using gloved hand."
+    },
+    {
+        "id": 11,
+        "text": "11. For 'wraparound' 'sterile gowns', take 'gloved hand' and 'release fastener' or 'ties' in 'front of gown'.",
+        "rationale": "Front of gown is sterile."
+    },
+    {
+        "id": 12,
+        "text": "12. Hand 'paper tab' connected to 'sterile tie' to 'circulating nurse', who is 'nonsterile'. 'Circulating nurse' stands 'still' as you 'turn completely around' to 'left', allowing for 'margin of safety' as 'gown' 'wraps around' and 'cover your back'. Take back 'sterile tie' from 'circulating nurse' and secure 'tie to gown'.",
+        "rationale": "Contact with team member could contaminate gown and gloves. Gown must enclose under garments."
+    },
+    {
+        "title": "RECORDING AND REPORTING"
+    },
+    {
+        "id": 13,
+        "text": "It is 'not necessary' to 'record' or 'report' this 'procedure'."
+    }
+
+  ]
+}

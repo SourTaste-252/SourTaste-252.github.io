@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the Blanks | Nursing LMS</title>
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/FolderStyles.css">
+</head>
+<body class="body">
+    <div class="top-container">
+        <img src="../../assets/Icons/Logo.png" alt="LOGO">
+        <button class="darkmode-toggle" id="darkmode-btn">◐</button>
+        <nav class="navbar-pro">
+            <a href="../Pages/Subjects.html" class="nav-link"><span>Subjects</span></a>
+            <a href="/index.html" class="nav-link"><span>Home</span></a>
+            <a href="../Pages/Tools.html" class="nav-link active"><span>Tools</span></a>
+        </nav>
+    </div>
+
+    <main class="main-content" id="main-content">
+        <!-- ✅ Initial folder menu -->
+        <div id="quizMenu">
+            <div class="folder">
+                <a href="#" class="folder-link fillblank-folder" data-quiz="quiz1">
+                    &nbsp;&nbsp; APPLYING STERILE GOWN
+
+                </a>
+            </div>
+        </div>
+
+        <!-- ✅ Quiz content placeholder -->
+        <section id="quizSection" style="display:none;">
+            <div class="quiz-title">
+                <h1 id="quizTitle"></h1>
+            </div>
+
+            <div id="quizContainer" class="quiz-container"></div>
+
+            <p id="resultDisplay" class="glow-text"></p>
+        </section>
+    </main>
+
+<!-- ✅ Bottom Tray -->
+<div class="bottom-tray" id="bottomTray">
+    <div class="tray-toggle" id="trayToggle">▼</div>
+    <div class="tray-buttons">
+        <button id="submitQuizBtn" class="btn">Submit</button>
+        <button id="clueBtn" class="btn" style="background:#fbc02d; color:#000;">Hold for Clue</button>
+        <button id="restartQuizBtn" class="btn small">Restart</button>
+        <button id="backToMenuBtn" class="btn small" style="background:#555;">Back</button>
+    </div>
+</div>
+
+    <footer>&copy; Atie, Lawrence James. All rights reserved</footer>
+
+
+
+
+    <script src="../../js/darkmode.js"></script>
+    <script src="../../js/FITB.js"></script>
+
+</body>
+</html>
