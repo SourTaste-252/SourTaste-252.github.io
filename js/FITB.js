@@ -222,13 +222,15 @@ trayToggle.addEventListener('click', () => {
                 if (!existing) {
                     existing = document.createElement('div');
                     existing.className = 'score-display';
+                    existing.style.position = 'absolute';
+                    existing.style.textAlign = 'center';
                     existing.style.fontSize = '0.9em';
                     existing.style.color = 'gold';
-                    existing.style.marginLeft = '20px';
-                    existing.style.marginTop = '5px';
+                    existing.style.padding = '5px';
+                    existing.style.marginTop = '0px';
                     parent.appendChild(existing);
                 }
-                existing.textContent = `Highest Score: ${scores[quizName]}`;
+                existing.textContent = `Score: ${scores[quizName]}`;
             } else if (existing) {
                 existing.remove();
             }
@@ -238,6 +240,7 @@ trayToggle.addEventListener('click', () => {
     // ✅ Run once on page load
 
     updateFolderScores();
+
 
 
 
