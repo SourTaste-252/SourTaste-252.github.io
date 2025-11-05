@@ -222,7 +222,7 @@ trayToggle.addEventListener('click', () => {
                 if (!existing) {
                     existing = document.createElement('div');
                     existing.className = 'score-display';
-                    existing.style.position = 'fixed';
+                    existing.style.position = 'absolute';
                     existing.style.textAlign = 'center';
                     existing.style.fontSize = '0.9em';
                     existing.style.color = 'black';
@@ -241,6 +241,7 @@ trayToggle.addEventListener('click', () => {
     // ✅ Run once on page load
 
     updateFolderScores();
+
 
 
 
