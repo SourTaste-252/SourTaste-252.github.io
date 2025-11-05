@@ -222,12 +222,13 @@ trayToggle.addEventListener('click', () => {
                 if (!existing) {
                     existing = document.createElement('div');
                     existing.className = 'score-display';
-                    existing.style.position = 'absolute';
+                    existing.style.position = 'fixed';
                     existing.style.textAlign = 'center';
                     existing.style.fontSize = '0.9em';
-                    existing.style.color = 'gold';
+                    existing.style.color = 'black';
                     existing.style.padding = '5px';
-                    existing.style.marginTop = '0px';
+                    existing.style.fontFamily = 'Arial, sans-serif';
+                    existing.style.marginTop = '-21px';
                     parent.appendChild(existing);
                 }
                 existing.textContent = `Score: ${scores[quizName]}`;
@@ -240,6 +241,7 @@ trayToggle.addEventListener('click', () => {
     // ✅ Run once on page load
 
     updateFolderScores();
+
 
 
 
