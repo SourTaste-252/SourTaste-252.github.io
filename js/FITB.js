@@ -59,7 +59,7 @@ trayToggle.addEventListener('click', () => {
     function loadQuiz(quizName, folderDisplayName) {
         quizTitle.textContent = folderDisplayName;
 
-        fetch(`../../js/Quizes_FITB/${quizName}.json`)
+        fetch(`/repo/js/Quizes_FITB/${quizName}.json`)
             .then(res => res.json())
             .then(quiz => {
                 if (!quiz) {
@@ -236,4 +236,5 @@ trayToggle.addEventListener('click', () => {
     }
 
     // ✅ Run once on page load
+
     updateFolderScores();
