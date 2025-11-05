@@ -57,14 +57,10 @@ trayToggle.addEventListener('click', () => {
 
     // ✅ Load JSON & inject quiz
     function loadQuiz(quizName, folderDisplayName) {
-        const repoBase = '/SourTaste-252'; // GitHub Pages repo root
         quizTitle.textContent = folderDisplayName;
 
-        fetch(`${repoBase}/js/Quizes_FITB/${quizName}.json`)
-            .then(res => {
-                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-                return res.json();
-            })
+        fetch(`../../js/Quizes_FITB/Quiz1.json`)
+            .then(res => res.json())
             .then(quiz => {
                 if (!quiz) {
                     quizContainer.innerHTML = `<p style="color:red;">Quiz not found.</p>`;
@@ -242,6 +238,7 @@ trayToggle.addEventListener('click', () => {
     // ✅ Run once on page load
 
     updateFolderScores();
+
 
 
 
