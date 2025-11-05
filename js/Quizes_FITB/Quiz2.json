@@ -1,0 +1,125 @@
+{
+  "paragraphs": [
+    {
+      "id": 1,
+      "text": "1. Consult 'manufacturer policy' regarding 'required length of time' and 'antiseptic to use' for 'hand antiseptics'. 'Chlorhexidine' has been found to be more effective than 'povidone iodine' ('WHO 2009').",
+      "rationale": "Guidelines vary regarding time needed and antiseptic to use for surgical scrub. Most facilities in the US follow 5 minutes for hand scrub (WHO 2009)."
+    },
+    {
+      "id": 2,
+      "text": "2. Remove 'bracelets', 'rings', and 'watches'.",
+      "rationale": "Jewelry may harbor or protect microorganisms from removal. Allergic skin reactions may occur due to scrub agent or powder accumulating under jewelry (Messano, 2013)."
+    },
+    {
+      "id": 3,
+      "text": "3. Ensure 'fingernails' are 'short', 'clean', and 'healthy'. 'Artificial nails' should be removed. 'Natural nails' should be less than '¼ inch' from 'fingertips'.",
+      "rationale": "Long nails and chipped or old polish increase number of bacteria residing on nails. Long fingernails can puncture gloves, causing contamination. Artificial nails harbor gram negative microorganisms and fungus (AORN 2014; CDC 2008a)."
+    },
+    {
+      "id": 4,
+      "text": "4. Inspect condition of 'cuticles', 'hands', and 'forearms' for 'abrasions', 'cuts', or 'open lesions'.",
+      "rationale": "These conditions increase likelihood of more microorganisms residing on skin surfaces. Broken skin permits microorganisms to enter layers of the skin, providing deeper microbial breeding grounds (AORN 2014)."
+    },
+    {
+      "id": 5,
+      "text": "5. Apply 'surgical shoe covers', 'cap' or 'hood', 'face mask', and 'protective eyewear'.",
+      "rationale": "Mask prevents escape into air of microorganisms that can contaminate hands. Other protective wear prevents exposure to blood and body fluid splashes during the procedure."
+    },
+    {
+      "id": 6,
+      "text": "6. Turn on 'water' using 'knee' or 'foot controls' and adjust to 'comfortable temperature'.",
+      "rationale": "Knee or foot controls prevent contamination of hand after scrub."
+    },
+    {
+      "id": 7,
+      "text": "7. Prescrub 'wash/rinse': Wet 'hands' and 'arms' under 'running lukewarm water' and lather 'detergent' to '5cm (2 inches) above elbows'. Keep 'hands above elbows' at all times.",
+      "rationale": "Water runs by gravity from fingertips to elbows. Hands become cleanest part of the upper extremity. Keeping hands elevated allows water to flow from least to most contaminated areas. Washing a wide area reduces risk of contaminating overlying gown that the nurse later applies."
+    },
+    {
+      "id": 8,
+      "text": "8. Rinse 'hands' and 'arms' thoroughly under 'running water'. Keep 'hands above elbows'.",
+      "rationale": "Rinsing removes transient bacteria from fingers, hands and forearms."
+    },
+    {
+      "id": 9,
+      "text": "9. Under 'running water', clean 'under nails' of both 'hands' with 'nail pick'. 'Discard' after use.",
+      "rationale": "Removes dirt and organic material that harbor large numbers of microorganisms."
+    },
+    {
+      "id": 10,
+      "text": "10. 'Surgical scrub' with 'sponge' or 'sponge brush'."
+    },
+    {
+      "id": 101,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;a. Wet 'clean sponge' and apply 'antimicrobial agent'. Wash all 'four sides' of each 'finger', 'hand', and 'arm'. Scrub 'nails' of one 'hand' with '15 strokes'. Scrub 'palm', each side of 'thumb' and 'fingers', and 'posterior side' of 'hand' with '10 strokes each'.",
+      "rationale": "Friction loosens resident bacteria that adhere to skin surfaces. Ensure coverage of all surfaces. Scrubbing is performed from cleanest area (hands) to marginal area (upper arms)."
+    },
+    {
+      "id": 102,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;b. Mentally divide 'arm' into 'thirds'. Scrub each 'third' 10 times. Policies may require scrub by total time rather than number of strokes. Rinse 'brush' and repeat for other 'arm'. A two sponge method may be used per policy.",
+      "rationale": "Eliminates transient microorganisms and reduces resident hand flora."
+    },
+    {
+      "id": 103,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;c. Discard 'brush'. Flex 'arms' and rinse from 'fingertips' to 'elbow' in one continuous motion.",
+      "rationale": "Hands remain the cleanest part of upper extremities."
+    },
+    {
+      "id": 104,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;d. Turn off 'water' with 'feet' or 'knee control', keeping 'hands elevated' in front of and away from 'body'. Enter 'operating room suite' by 'backing in'.",
+      "rationale": "Keeps hands free of microorganisms."
+    },
+    {
+      "id": 105,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;e. Approach 'sterile setup' and grasp 'sterile towel', avoiding dripping water onto setup.",
+      "rationale": "Water contaminates sterile setup."
+    },
+    {
+      "id": 106,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;f. Bending at waist, keep 'hands' and 'arms' above waist and outstretched. Grasp one end of 'sterile towel' and dry one hand, moving from 'fingers' to 'elbow' in rotating motion.",
+      "rationale": "Avoids sterile towel from contacting unsterile scrub attire and transferring contamination to hands. Dry skin from cleanest (hands) to least clean (elbows)."
+    },
+    {
+      "id": 107,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;g. Repeat drying for other hand using same or new 'sterile towel'.",
+      "rationale": "Prevents accidental contamination."
+    },
+    {
+      "id": 108,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;h. Drop 'towel' into 'linen hamper' or 'circulating nurse’s hand'.",
+      "rationale": "Prevents accidental contamination."
+    },
+    {
+      "title": "OPTIONAL: BRUSHLESS ANTISEPTIC HAND RUB"
+    },
+    {
+      "id": 11,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;a. After prescrub wash, dry 'hands' and 'forearms' with 'paper towel'.",
+      "rationale": "Promotes reduction in microorganisms on all surfaces of hands and arms."
+    },
+    {
+      "id": 12,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;b. Dispense 2 mL of 'antimicrobial hand preparation' into 'palm' of one hand. Dip 'fingertips' of opposite hand into preparation and work under nails. Spread remaining hand preparation over hand and up to just above elbow, covering all surfaces."
+    },
+    {
+      "id": 13,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;c. Using another 2 mL, repeat with other hand."
+    },
+    {
+      "id": 14,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;d. Dispense another 2 mL into either hand and reapply to all aspects of both hands up to wrist. Allow to dry thoroughly before donning gloves.",
+      "rationale": "Ensures complete antiseptic coverage of all hand surfaces."
+    },
+    {
+      "title": "RECORDING AND REPORTING"
+    },
+    {
+      "id": 15,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;- It is not necessary to record or report this procedure."
+    },
+    {
+      "id": 16,
+      "text": "&nbsp;&nbsp;&nbsp;&nbsp;- Report any skin dermatitis to employee health or infection control per agency policy."
+    }
+  ]
+}
