@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ & SATA | Nursing LMS</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <link rel="stylesheet" href="../../assets/LMSStyles.css">
+  <link rel="stylesheet" href="../../assets/FolderStyles.css">
+</head>
+<body class="body">
+
+<div class="top-container">
+  <img src="../../assets/Icons/Logo.png" alt="LOGO">
+  <button class="darkmode-toggle" id="darkmode-btn">◐</button>
+  <nav class="navbar-pro">
+    <a href="../Pages/Subjects.html" class="nav-link"><span>Subjects</span></a>
+    <a href="/index.html" class="nav-link"><span>Home</span></a>
+    <a href="../Pages/Tools.html" class="nav-link active"><span>Tools</span></a>
+  </nav>
+</div>
+
+<main class="main-content">
+  <h1 class="page-title">Assessment Test</h1>
+
+  <!-- Quiz Menu -->
+  <div class="folder-container" id="quizMenu">
+    <div class="folder">
+      <a href="#" class="folder-link mcq-folder" data-quiz="quiz1">APPLYING STERILE GOWN</a>
+    </div>
+    <div class="folder">
+      <a href="#" class="folder-link mcq-folder" data-quiz="quiz2">SURGICAL SCRUBBING</a>
+    </div>
+  </div>
+
+  <!-- Quiz Section -->
+  <section id="quizSection" style="display:none;">
+    <h1 id="quizTitle"></h1>
+    <div id="quizContainer" class="quiz-container"></div>
+    <p id="resultDisplay" class="glow-text"></p>
+  </section>
+</main>
+
+<!-- Bottom Tray -->
+<div class="bottom-tray hidden" id="bottomTray">
+  <div class="tray-toggle" id="trayToggle">▼</div>
+  <div class="tray-buttons">
+    <button id="submitQuizBtn" class="btn">Submit</button>
+    <button id="restartQuizBtn" class="btn small">Restart</button>
+    <button id="backToMenuBtn" class="btn small" style="background:#555;">Back</button>
+  </div>
+</div>
+
+<footer>&copy; Atie, Lawrence James. All rights reserved</footer>
+
+<script>
+// ================= DOM =================
+const quizMenu = document.getElementById('quizMenu');
+const quizSection = document.getElementById('quizSection');
+const quizContainer = document.getElementById('quizContainer');
+const quizTitle = document.getElementById('quizTitle');
+const resultDisplay = document.getElementById('resultDisplay');
+
+const submitBtn = document.getElementById('submitQuizBtn');
+const restartBtn = document.getElementById('restartQuizBtn');
+const backBtn = document.getElementById('backToMenuBtn');
+
+const tray = document.getElementById('bottomTray');
+const trayToggle = document.getElementById('trayToggle');
+let trayCollapsed = false;
+
+// ================= Tray =================
+function showTray() {
+  tray.classList.remove('hidden');
+  tray.classList.remove('collapsed');
+  trayCollapsed = false;
+  trayToggle.textContent = '▼';
+}
+function hideTray() {
+  tray.classList.add('hidden');
+  tray.classList.remove('collapsed');
+}
+trayToggle.onclick = () => {
+  trayCollapsed = !trayCollapsed;
+  tray.classList.toggle('collapsed', trayCollapsed);
+  trayToggle.textContent = trayCollapsed ? '▲' : '▼';
+};
+
+// ================= Load Quiz =================
+function loadQuiz(quizName, displayName) {
+  fetch(`../../js/Quizes_MCQSATA/${quizName}.json`)
+    .then(res => res.json())
+    .then(quiz => {
+      quizTitle.textContent = displayName;
+      generateQuiz(quiz.questions);
+      setupLogic(quizName, quiz.questions);
+      quizMenu.style.display = 'none';
+      quizSection.style.display = 'block';
+      showTray();
+    })
+    .catch(() => {
+      quizContainer.innerHTML = '<p style="color:red">Quiz not found.</p>';
+    });
+}
+
+// ================= Render =================
+function generateQuiz(questions) {
+  quizContainer.innerHTML = '';
+
+  questions.forEach((q, index) => {
+    const isSATA = q.type === 'SATA';
+    const inputType = isSATA ? 'checkbox' : 'radio';
+
+    let optionsHTML = '';
+    q.options.forEach((opt, i) => {
+      optionsHTML += `
+        <label class="option">
+          <input type="${inputType}" name="q${index}" value="${i}">
+          ${opt}
+        </label><br>
+      `;
+    });
+
+    quizContainer.innerHTML += `
+      <div class="quiz-block" data-index="${index}">
+        <p><strong>${index + 1}. ${q.question}</strong></p>
+        ${optionsHTML}
+        <p class="rationale" style="display:none;"><strong>Rationale:</strong> ${q.rationale || ''}</p>
+      </div>
+      <br>
+    `;
+  });
+}
+
+// ================= Logic =================
+function setupLogic(quizName, questions) {
+  submitBtn.onclick = () => {
+    let score = 0;
+
+    questions.forEach((q, i) => {
+      const block = quizContainer.querySelector(`[data-index="${i}"]`);
+      const inputs = block.querySelectorAll('input');
+      const rationale = block.querySelector('.rationale');
+
+      let selected = [];
+      inputs.forEach(inp => { if (inp.checked) selected.push(Number(inp.value)); });
+
+      let correct = false;
+      if (q.type === 'MCQ') {
+        correct = selected.length === 1 && selected[0] === q.answer;
+      } else {
+        correct = JSON.stringify(selected.sort()) === JSON.stringify(q.answer.sort());
+      }
+
+      if (correct) score++;
+      block.style.borderLeft = correct ? '5px solid limegreen' : '5px solid red';
+      if (rationale) rationale.style.display = 'block';
+    });
+
+    resultDisplay.textContent = `Score: ${score} / ${questions.length}`;
+
+    const scores = JSON.parse(localStorage.getItem('quizScores')) || {};
+    scores[quizName] = Math.max(scores[quizName] || 0, score);
+    localStorage.setItem('quizScores', JSON.stringify(scores));
+    updateFolderScores();
+  };
+
+  restartBtn.onclick = () => {
+    quizContainer.querySelectorAll('input').forEach(i => i.checked = false);
+    quizContainer.querySelectorAll('.quiz-block').forEach(b => b.style.borderLeft = '');
+    quizContainer.querySelectorAll('.rationale').forEach(r => r.style.display = 'none');
+    resultDisplay.textContent = '';
+  };
+
+  backBtn.onclick = () => {
+    quizSection.style.display = 'none';
+    quizMenu.style.display = 'flex';
+    resultDisplay.textContent = '';
+    hideTray();
+  };
+}
+
+// ================= Menu =================
+document.querySelectorAll('.mcq-folder').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    loadQuiz(link.dataset.quiz, link.textContent.trim());
+  });
+});
+
+function updateFolderScores() {
+  const scores = JSON.parse(localStorage.getItem('quizScores')) || {};
+  document.querySelectorAll('.mcq-folder').forEach(link => {
+    const parent = link.closest('.folder');
+    let badge = parent.querySelector('.score-display');
+    if (scores[link.dataset.quiz]) {
+      if (!badge) {
+        badge = document.createElement('div');
+        badge.className = 'score-display';
+        parent.appendChild(badge);
+      }
+      badge.textContent = `Score: ${scores[link.dataset.quiz]}`;
+    } else if (badge) badge.remove();
+  });
+}
+
+updateFolderScores();
+</script>
+</body>
+</html>
