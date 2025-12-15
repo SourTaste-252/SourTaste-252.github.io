@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "type": "MCQ",
+      "question": "Which action maintains sterility when donning a gown?",
+      "options": [
+        "Touching the gown front",
+        "Keeping hands above waist",
+        "Allowing sleeves to touch the floor",
+        "Turning back to the sterile field"
+      ],
+      "answer": 1,
+      "rationale": "Hands must remain above waist level to maintain sterility."
+    },
+    {
+      "type": "SATA",
+      "question": "Which are principles of surgical hand scrubbing? (Select all that apply)",
+      "options": [
+        "Scrub from fingertips to elbows",
+        "Keep hands below elbows",
+        "Use firm friction",
+        "Allow water to flow from elbows to hands"
+      ],
+      "answer": [0, 2],
+      "rationale": "Scrubbing proceeds from fingertips to elbows using friction."
+    }
+  ]
+}
