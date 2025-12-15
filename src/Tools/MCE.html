@@ -124,16 +124,79 @@ function generateQuiz(questions) {
     quizContainer.innerHTML += `
       <div class="quiz-block" data-index="${index}">
         <p><strong>${index + 1}. ${q.question}</strong></p>
+
         ${optionsHTML}
-        <p class="rationale" style="display:none;"><strong>Rationale:</strong> ${q.rationale || ''}</p>
+
+        <button class="btn small check-btn" data-q="${index}">
+          Check
+        </button>
+
+        <p class="answer-feedback" style="display:none;"></p>
+
+        <p class="rationale" style="display:none;">
+          <strong>Rationale:</strong> ${q.rationale || ''}
+        </p>
       </div>
       <br>
     `;
   });
 }
+function checkSingleQuestion(qIndex, questions) {
+  const q = questions[qIndex];
+  const block = quizContainer.querySelector(`[data-index="${qIndex}"]`);
+  const inputs = block.querySelectorAll('input');
+  const feedback = block.querySelector('.answer-feedback');
+  const rationale = block.querySelector('.rationale');
+
+  let selected = [];
+  inputs.forEach(inp => {
+    if (inp.checked) selected.push(Number(inp.value));
+  });
+
+  let correct = false;
+
+  if (q.type === 'MCQ') {
+    correct = selected.length === 1 && selected[0] === q.answer;
+  } else {
+    correct =
+      JSON.stringify(selected.sort()) ===
+      JSON.stringify(q.answer.slice().sort());
+  }
+
+  // Lock inputs
+  inputs.forEach(inp => inp.disabled = true);
+
+  // Visual feedback
+  block.style.borderLeft = correct
+    ? '5px solid limegreen'
+    : '5px solid red';
+
+  // Show correct answer(s)
+  const correctAnswers = Array.isArray(q.answer)
+    ? q.answer.map(i => q.options[i]).join(', ')
+    : q.options[q.answer];
+
+  feedback.style.display = 'block';
+  feedback.innerHTML = correct
+    ? '✅ <strong>Correct</strong>'
+    : `❌ <strong>Incorrect</strong><br>
+       <strong>Correct answer:</strong> ${correctAnswers}`;
+
+  if (rationale) rationale.style.display = 'block';
+}
+  
+
 
 // ================= Logic =================
 function setupLogic(quizName, questions) {
+  quizContainer.addEventListener('click', e => {
+  if (e.target.classList.contains('check-btn')) {
+    const qIndex = Number(e.target.dataset.q);
+    checkSingleQuestion(qIndex, questions);
+    e.target.disabled = true; // prevent re-check
+  }
+});
+  
   submitBtn.onclick = () => {
     let score = 0;
 
@@ -166,11 +229,27 @@ function setupLogic(quizName, questions) {
   };
 
   restartBtn.onclick = () => {
-    quizContainer.querySelectorAll('input').forEach(i => i.checked = false);
-    quizContainer.querySelectorAll('.quiz-block').forEach(b => b.style.borderLeft = '');
-    quizContainer.querySelectorAll('.rationale').forEach(r => r.style.display = 'none');
-    resultDisplay.textContent = '';
-  };
+  quizContainer.querySelectorAll('input').forEach(i => {
+    i.checked = false;
+    i.disabled = false;
+  });
+
+  quizContainer.querySelectorAll('.quiz-block').forEach(b => {
+    b.style.borderLeft = '';
+  });
+
+  quizContainer.querySelectorAll('.rationale, .answer-feedback').forEach(el => {
+    el.style.display = 'none';
+    el.innerHTML = '';
+  });
+
+  quizContainer.querySelectorAll('.check-btn').forEach(btn => {
+    btn.disabled = false;
+  });
+
+  resultDisplay.textContent = '';
+};
+
 
   backBtn.onclick = () => {
     quizSection.style.display = 'none';
