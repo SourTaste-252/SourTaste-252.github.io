@@ -163,15 +163,43 @@ function checkSingleQuestion(qIndex, questions) {
       JSON.stringify(q.answer.slice().sort());
   }
 
-  // Lock inputs
+  // 🔒 Lock inputs
   inputs.forEach(inp => inp.disabled = true);
 
-  // Visual feedback
+  // 🎨 Highlight answers
+  inputs.forEach(inp => {
+    const optionIndex = Number(inp.value);
+    const label = inp.closest('label');
+
+    // Correct answers → green
+    if (
+      (Array.isArray(q.answer) && q.answer.includes(optionIndex)) ||
+      optionIndex === q.answer
+    ) {
+      label.style.color = 'limegreen';
+      label.style.fontWeight = 'bold';
+    }
+
+    // Wrong selections → red
+    if (inp.checked) {
+      const isCorrect =
+        Array.isArray(q.answer)
+          ? q.answer.includes(optionIndex)
+          : optionIndex === q.answer;
+
+      if (!isCorrect) {
+        label.style.color = 'red';
+        label.style.fontWeight = 'bold';
+      }
+    }
+  });
+
+  // Block indicator
   block.style.borderLeft = correct
     ? '5px solid limegreen'
     : '5px solid red';
 
-  // Show correct answer(s)
+  // Show feedback text
   const correctAnswers = Array.isArray(q.answer)
     ? q.answer.map(i => q.options[i]).join(', ')
     : q.options[q.answer];
@@ -184,6 +212,7 @@ function checkSingleQuestion(qIndex, questions) {
 
   if (rationale) rationale.style.display = 'block';
 }
+
   
 
 
@@ -234,6 +263,11 @@ function setupLogic(quizName, questions) {
     i.disabled = false;
   });
 
+  quizContainer.querySelectorAll('label').forEach(label => {
+    label.style.color = '';
+    label.style.fontWeight = '';
+  });
+
   quizContainer.querySelectorAll('.quiz-block').forEach(b => {
     b.style.borderLeft = '';
   });
@@ -249,6 +283,7 @@ function setupLogic(quizName, questions) {
 
   resultDisplay.textContent = '';
 };
+
 
 
   backBtn.onclick = () => {
