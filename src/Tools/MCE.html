@@ -88,7 +88,7 @@ trayToggle.onclick = () => {
 
 // ================= Load Quiz =================
 function loadQuiz(quizName, displayName) {
-  fetch(`../../js/Quizes_MCQSATA/${quizName}.json`)
+  fetch(`./Quize/${quizName}.json`)
     .then(res => res.json())
     .then(quiz => {
       quizTitle.textContent = displayName;
