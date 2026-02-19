@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nursing Course Review & Study Hub</title>
+
+        <link rel="stylesheet" href="../assets/MenuStyles.css">
+
+    </head>
+
+    <body>
+        <header class="topbar">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <h1 class="logo">
+                <span class="title">Study<span class="logovar">Hub</span></span>
+                <img src="assets\Icons\Logo.png" alt="Logo">
+            </h1>
+        </header>
+
+        <div class="overlay" id="overlay"></div>
+
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+                <button class="close-btn" id="closeBtn">&times;</button>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a class="menu-link active" href="#HOME">
+                        <img src="assets/Icons/Home-icon.png" class="small-logo-lm" alt="Logo">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-link" href="../src/Pages/Subjects.html">
+                        <img src="assets/Icons/Subject-icon.png" class="small-logo-lm" alt="Logo">
+                        Subjects
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-link" href="../src/Pages/Tools.html">
+                        <img src="assets/Icons/Tools-icon.png" class="small-logo-lm" alt="Logo">
+                        Tools
+                    </a>
+                </li>
+                <li class="menu-item dropdown">
+                    <a class="menu-link" href="javascript:void(0)" id="toolsBtn">
+                        <div class="dropdown-container">
+                            <img src="./assets/Icons/ExpandArr.png">
+                            <div class="dropdown-tag">Tools list</div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./src/Tools/Motivate.html">Motivation Jar</a></li>
+                        <li><a href="./src/Tools/Wordle.html">Wordle</a></li>
+                        <li><a href="./src/Tools/FITB.html">Fill in the blanks</a></li>
+                        <li><a href="../Tools/flashCard.html">Flash Cards</a></li>
+                    </ul>
+                </li>
+                <div class="line"></div>
+            </ul>
+            <div class="darkmode-section">
+                <label class="darkmode-toggle">
+                    <span>Dark Mode</span>
+                    <input type="checkbox" id="darkModeToggle">
+                    <div class="slider"></div>
+                </label>
+            </div>
+            <div class="footer">
+                <span>&copy; Atie, Lawrence James. All rights reserved</span>
+            </div>
+
+        </nav>
+
+
+
+        <main>
+            <div class="container"> 
+                <div class="namecontainer">
+                    <img src="assets/Icons/Home-img/FlorenceN.jpg" alt="Pin"> 
+                    <div class="userdisplay">
+                        Florence Nightingale<br><h1>@FlorenceN_gale</h1> 
+                    </div> 
+                </div>
+                <div class="card"> <img src="assets\Icons\Home-img\SimsonN.png"> </div>
+                <div class="content">"I attribute my success to this: I never gave or took any excuse." </div>
+            </div> 
+            <span></span>
+            <div class="container"> 
+                <div class="namecontainer">
+                    <img src="assets/Icons/Home-img/DorotheaO.jpg" alt="Pin"> 
+                    <div class="userdisplay">
+                        Dorothea Orem<br><h1>@Dororem</h1> 
+                    </div> 
+                </div>
+                <div class="card"> <img src="assets\Icons\Home-img\angryO.jpg"> </div>
+                <div class="content">"If you can take good care of yourself by yourself you are fully amulance sorry." </div>
+            </div> 
+            <span></span>
+            <div class="container"> 
+                <div class="namecontainer">
+                    <img src="assets/Icons/Home-img/ShaunM.jpg" alt="Pin"> 
+                    <div class="userdisplay">
+                        Dr. Shaun Murphy<br><h1>@Good_Doc</h1> 
+                    </div> 
+                </div>
+                <div class="card"> <img src="assets\Icons\Home-img\IAmASur.jpg"> </div>
+                <div class="content">"I!!! AM!! A! SuRgEoN!!!" </div>
+            </div> 
+            <span></span>
+        </main>
+
+    </body>
+
+
+
+    <script src="/js/darkmode.js"></script>
+    <script src="/js/essensials.js"></script>
+</html>

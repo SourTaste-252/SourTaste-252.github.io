@@ -1,0 +1,23 @@
+{
+  "easy": [
+    "apple","chair","spice","train","music","light","plant","stone","water","smile",
+    "bread","cloud","dream","flame","grape","house","jelly","knife","lemon","magic",
+    "night","ocean","pearl","queen","river","sugar","table","unity","voice","wheat",
+    "xenon","young","zebra","amber","beach","candy","dance","eagle","frost","giant",
+    "happy","index","jolly","koala","lemon","mango","noble","orbit","piano","quiet"
+  ],
+  "medium": [
+    "nurse","scrub","glove","vital","pulse","fever","wound","medic","chart","drain",
+    "oxsat","scope","stool","cough","swabs","hepar","urine","veins","wards","thera",
+    "lamps","hands","shift","blood","graft","cells","salts","gowns","trays","notes",
+    "tests","syrup","bones","lungs","heart","renal","steth","spasm","drugs","ivflu",
+    "ivbag","iminj","caths","prnly","abxrx","oroom","triag","labrx","units","flush"
+  ],
+  "hard": [
+    "zymic","qophs","xylyl","jibba","knurl","lymph","crwth","glyph","phlox","whorl",
+    "syzygy","qubit","fjord","gnome","nymph","babka","junta","knaur","lurgy","mazut",
+    "myrrh","noisy","oxlip","pique","quipu","rhyth","squib","thymy","ulcer","vetch",
+    "whizz","xylan","yirth","zazen","cwmic","djinx","fizzy","glitz","hymns","jukes",
+    "klutz","lynch","mothy","nymphs","pixie","squaw","tzars","vapid","waltz","zincy"
+  ]
+}

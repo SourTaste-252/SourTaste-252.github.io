@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nursing Course Review & Study Hub</title>
+
+        <link rel="stylesheet" href="..\..\assets\MenuStyles.css">
+        <link rel="stylesheet" href="..\..\assets\FolderStyles.css">
+
+    </head>
+
+    <body>
+        <header class="topbar">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <h1 class="logo">
+                <span class="title">Study<span class="logovar">Hub</span></span>
+                <img src="..\..\assets\Icons\Logo.png" alt="Logo">
+            </h1>
+        </header>
+
+        <div class="overlay" id="overlay"></div>
+
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+                <button class="close-btn" id="closeBtn">&times;</button>
+            </div>  
+            <ul class="menu">
+                <li>
+                    <a class="menu-link" href="../../index.html">
+                        <img src="../../assets/Icons/Home-icon.png" class="small-logo-lm" alt="Logo">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-link" href="./Subjects.html">
+                        <img src="../../assets/Icons/Subject-icon.png" class="small-logo-lm" alt="Logo">
+                        Subjects
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-link active" href="./Tools.html">
+                        <img src="../../assets/Icons/Tools-icon.png" class="small-logo-lm" alt="Logo">
+                        Tools
+                    </a>
+                </li>
+                <li class="menu-item dropdown">
+                    <a class="menu-link" href="javascript:void(0)" id="toolsBtn">
+                        
+                        <div class="dropdown-container">
+                            <img src="../../assets/Icons/ExpandArr.png">
+                            <div class="dropdown-tag">Tools list</div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../Tools/Motivate.html">Motivation Jar</a></li>
+                        <li><a href="../Tools/Wordle.html">Wordle</a></li>
+                        <li><a href="../Tools/FITB.html">Fill in the blanks</a></li>
+                        <li><a href="../Tools/flashCard.html">Flash Cards</a></li>
+                    </ul>
+                </li>
+                <div class="line"></div>
+            </ul>
+            <div class="darkmode-section">
+                <label class="darkmode-toggle">
+                    <span>Dark Mode</span>
+                    <input type="checkbox" id="darkModeToggle">
+                    <div class="slider"></div>
+                </label>
+            </div>
+            <div class="footer">
+                <span>&copy; Atie, Lawrence James. All rights reserved</span>
+            </div>
+
+        </nav>
+
+
+
+        <main>
+            <section class="selection-container">
+                <a href="/src/Tools/Motivate.html" class="content-link">
+                    <div class="content-card">
+                        <div class="cover-box"> <img src="../../assets/Icons/Cover-img/MotivC.png"> </div>
+                        <div class="content-header">
+                            <div class="content-icon"><img src="../../assets/Icons/MotivJar_Logo.png"> </div>
+                            <div class="title"> 
+                                <div class="MotivateJar">Motivation Jar</div>
+                                <div class="Subtitle">for when you need it</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/src/Tools/Wordle.html" class="content-link">
+                    <div class="content-card">
+                        <div class="cover-box"> <img src="../../assets/Icons/Cover-img/WordlC.png"> </div>
+                        <div class="content-header">
+                            <div class="content-icon"><img src="/assets/Icons/Wordle_Logo.png"> </div>
+                            <div class="title"> 
+                                <div class="wordle">Wordle</div>
+                                <div class="Subtitle">5 letter word guesser</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/src/Tools/FITB.html" class="content-link">
+                    <div class="content-card">
+                        <div class="cover-box"> <img src="../../assets/Icons/Cover-img/placeholderC.png"> </div>
+                        <div class="content-header">
+                            <div class="content-icon"><img src="/assets/Icons/FITB.png"> </div>
+                            <div class="title"> 
+                                <div class="FITB">Fill in The blanks</div>
+                                <div class="Subtitle">Fill in the blanks-test practice</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/src/Tools/flashCard.html" class="content-link">
+                    <div class="content-card">
+                        <div class="cover-box"> <img src="../../assets/Icons/Cover-img/placeholderC.png"> </div>
+                        <div class="content-header">
+                            <div class="content-icon"><img src="/assets/Icons/Flashcard_Logo.png"> </div>
+                            <div class="title"> 
+                                <div class="flashCard">Flash Cards</div>
+                                <div class="Subtitle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </section>          
+        </main>
+
+    </body>
+
+
+
+    <script src="/js/darkmode.js"></script>
+    <script src="/js/essensials.js"></script>
+</html>

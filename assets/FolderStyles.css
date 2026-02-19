@@ -1,0 +1,55 @@
+:root {
+    --wordle-color: #538d4e;
+    --flashcards-color: #018ABE;
+    --motivatejar-color: #5c5cff;
+    --fillblank-color: #f4b400;
+    --fillblank-hover: #ffd54f;
+    --fillblank-shadow: rgba(255, 213, 79, 0.4);
+}
+
+[data-theme="dark"] {
+    --wordle-color: #538d4e;
+    --flashcards-color: #018ABE;
+    --motivatejar-color: #90caf9;
+    --fillblank-color: #ffca28;
+    --fillblank-hover: #ffe082;
+    --fillblank-shadow: rgba(255, 224, 130, 0.6);
+}
+
+.wordle {
+    font-family: 'Trebuchet MS', 'Verdana', 'Arial', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--wordle-color);
+}
+
+.flashCard {
+    font-family: Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--flashcards-color);
+}
+
+.MotivateJar {
+    font-family: 'lucida calligraphy', cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--motivatejar-color);
+    filter: drop-shadow(0 0 6px rgba(var(--motivatejar-color), 0.8));
+}
+
+.FITB {
+    font-family: 'Trebuchet MS', 'Verdana', 'Arial', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--fillblank-color);
+    transition: all 0.25s ease-in-out;
+}

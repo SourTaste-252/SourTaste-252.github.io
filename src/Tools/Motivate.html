@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivation Jar - Study Hub</title>
+
+    <link rel="stylesheet" href="../../assets/MenuStyles.css">
+    <link rel="stylesheet" href="../../assets/Motivate.css">
+</head>
+<body>
+    <!-- Topbar -->
+    <header class="topbar">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <h1 class="logo">
+            <span class="title">Study<span class="logovar">Hub</span></span>
+            <img src="../../assets/Icons/Logo.png" alt="Logo">
+        </h1>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Sidebar Menu -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="close-btn" id="closeBtn">&times;</button>
+        </div>  
+        <ul class="menu">
+            <li>
+                <a class="menu-link" href="../../index.html">
+                    <img src="../../assets/Icons/Home-icon.png" class="small-logo-lm" alt="Logo"> 
+                    Home
+                </a>
+            </li>
+            <li>
+                <a class="menu-link" href="../Pages/Subjects.html">
+                    <img src="../../assets/Icons/Subject-icon.png" class="small-logo-lm" alt="Logo"> 
+                    Subjects
+                </a>
+            </li>
+            <li>
+                <a class="menu-link active" href="../Pages/Tools.html">
+                    <img src="../../assets/Icons/Tools-icon.png" class="small-logo-lm" alt="Logo"> 
+                    Tools
+                </a>
+            </li>
+            <li class="menu-item dropdown">
+                <a class="menu-link" href="javascript:void(0)" id="toolsBtn">
+                    <div class="dropdown-container">
+                        <img src="../../assets/Icons/ExpandArr.png">
+                        <div class="dropdown-tag">Tools list</div>
+                    </div>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="../Tools/Motivate.html">Motivation Jar</a></li>
+                    <li><a href="../Tools/Wordle.html">Wordle</a></li>
+                    <li><a href="../Tools/FITB.html">Fill in the blanks</a></li>
+                    <li><a href="../Tools/flashCard.html">Flash Cards</a></li>
+                </ul>
+            </li>
+            <div class="line"></div>
+        </ul>
+        <div class="darkmode-section">
+            <label class="darkmode-toggle">
+                <span>Dark Mode</span>
+                <input type="checkbox" id="darkModeToggle">
+                <div class="slider"></div>
+            </label>
+        </div>
+        <div class="footer">
+            <span>&copy; Atie, Lawrence James. All rights reserved</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="wrapper">
+                <div class="jar-container">
+                    <div class="jar" id="motivate-jar">
+                        <div class="jar-overlay"></div>
+                        <div class="lid-spawn"></div>
+                        <div class="lid-line"></div>
+                        <!-- Floating strips -->
+                        <div class="strip strip1"></div>
+                        <div class="strip strip2"></div>
+                        <div class="strip strip3"></div>
+                        <div class="strip strip4"></div>
+                        <div class="strip strip5"></div>
+                        <div class="strip strip6"></div>
+                        <div class="strip strip7"></div>
+                        <div class="strip strip8"></div>
+                        <div class="strip strip9"></div>
+                        <div class="strip strip10"></div>
+                        <div class="strip strip11"></div>
+                        <div class="strip strip12"></div>
+                        <div class="strip strip13"></div>
+                    </div>
+                </div>
+                <div class="overlay-card">
+                    <div class="quote" id="quote"></div>
+                    <button class="quote-button hidden" id="saveQuoteBtn">
+                        Save Quote
+                    </button>
+                    <div class="saved-quotes-container">
+                        <button class="saved-toggle" id="toggleSavedBtn">
+                            Saved Quotes
+                        </button>
+                        <div class="saved-quotes-list" id="savedQuotesList"></div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <script src="../../js/motivate.js"></script>
+    <script src="../../js/darkmode.js"></script>
+    <script src="../../js/essensials.js"></script>
+</body>
+</html>

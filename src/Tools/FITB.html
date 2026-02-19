@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the Blanks | StudyHub</title>
+
+    <link rel="stylesheet" href="../../assets/MenuStyles.css">
+    <link rel="stylesheet" href="../../assets/FolderStyles.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <h1 class="logo">
+            <span class="title">Study<span class="logovar">Hub</span></span>
+            <img src="../../assets/Icons/Logo.png" alt="Logo">
+        </h1>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="close-btn" id="closeBtn">&times;</button>
+        </div>
+
+        <ul class="menu">
+            <li>
+                <a class="menu-link" href="../../index.html">
+                    <img src="../../assets/Icons/Home-icon.png" class="small-logo-lm"> Home
+                </a>
+            </li>
+            <li>
+                <a class="menu-link" href="../Pages/Subjects.html">
+                    <img src="../../assets/Icons/Subject-icon.png" class="small-logo-lm"> Subjects
+                </a>
+            </li>
+            <li>
+                <a class="menu-link active" href="../Pages/Tools.html">
+                    <img src="../../assets/Icons/Tools-icon.png" class="small-logo-lm"> Tools
+                </a>
+            </li>
+                <li class="menu-item dropdown">
+                    <a class="menu-link" href="javascript:void(0)" id="toolsBtn">
+                        <div class="dropdown-container">
+                            <img src="../../assets/Icons/ExpandArr.png" alt="Expand">
+                            <div class="dropdown-tag">Tools list</div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../Tools/Motivate.html">Motivation Jar</a></li>
+                        <li><a href="../Tools/Wordle.html">Wordle</a></li>
+                        <li><a href="../Tools/FITB.html">Fill in the blanks</a></li>
+                        <li><a href="../Tools/flashCard.html">Flash Cards</a></li>
+                    </ul>
+                </li>
+        </ul>
+
+        <div class="darkmode-section">
+            <label class="darkmode-toggle">
+                <span>Dark Mode</span>
+                <input type="checkbox" id="darkModeToggle">
+                <div class="slider"></div>
+            </label>
+        </div>
+
+        <div class="footer">&copy; Atie, Lawrence James. All rights reserved</div>
+    </nav>
+
+    <main>
+        <h1 style="text-align: center;">Sorry<br>Page is Under Construction <br>Will be ready soon</h1>
+    </main>
+
+
+
+    <script src="../../js/FITB.js"></script>
+    <script src="../../js/darkmode.js"></script>
+    <script src="../../js/essensials.js"></script>
+</body>
+</html>

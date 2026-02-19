@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle - Study Hub</title>
+
+    <link rel="stylesheet" href="../../assets/MenuStyles.css">
+    <link rel="stylesheet" href="../../assets/Wordle.css">
+</head>
+
+<body>
+    <!-- Topbar -->
+    <header class="topbar">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <h1 class="logo">
+            <span class="title">Study<span class="logovar">Hub</span></span>
+            <img src="../../assets/Icons/Logo.png" alt="Logo">
+        </h1>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Sidebar Menu -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button class="close-btn" id="closeBtn">&times;</button>
+        </div>
+
+        <ul class="menu">
+            <li>
+                <a class="menu-link" href="/index.html">
+                    <img src="../../assets/Icons/Home-icon.png" class="small-logo-lm" alt="Logo">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a class="menu-link" href="../Pages/Subjects.html">
+                    <img src="../../assets/Icons/Subject-icon.png" class="small-logo-lm" alt="Logo">
+                    Subjects
+                </a>
+            </li>
+            <li>
+                <a class="menu-link active" href="../Pages/Tools.html">
+                    <img src="../../assets/Icons/Tools-icon.png" class="small-logo-lm" alt="Logo">
+                    Tools
+                </a>
+            </li>
+            <li class="menu-item dropdown">
+                <a class="menu-link" href="javascript:void(0)" id="toolsBtn">
+                    <div class="dropdown-container">
+                        <img src="../../assets/Icons/ExpandArr.png" alt="Expand">
+                        <div class="dropdown-tag">Tools list</div>
+                    </div>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="../Tools/Motivate.html">Motivation Jar</a></li>
+                    <li><a href="../Tools/Wordle.html">Wordle</a></li>
+                    <li><a href="../Tools/FITB.html">Fill in the blanks</a></li>
+                    <li><a href="../Tools/flashCard.html">Flash Cards</a></li>
+                </ul>
+            </li>
+            <div class="line"></div>
+        </ul>
+
+        <div class="darkmode-section">
+            <label class="darkmode-toggle">
+                <span>Dark Mode</span>
+                <input type="checkbox" id="darkModeToggle">
+                <div class="slider"></div>
+            </label>
+        </div>
+
+        <div class="footer">
+            <span>&copy; Atie, Lawrence James. All rights reserved</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="keeper">
+        <section class="container, layout">
+                <div class="wordle-title">Wordle</div>
+
+                <div id="grid" class="grid">
+                    <div class="row">
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                    </div>
+                    <div class="row">
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                    </div>                    
+                </div>
+
+                <div class="message" id="message"></div>
+
+                <div id="keyboard"></div>
+
+                <div class="game-over-overlay" id="gameOverOverlay">
+                    <div class="overlay-content">
+                        <h2 id="overlayTitle" class="overlay-title"></h2>
+                        <p id="overlayWord" class="overlay-word"></p>
+                        <button id="playAgainOverlay">Try Again</button>
+                    </div>
+                </div>
+        </section>
+        <section class="settings-container">
+            <div class="wordle-settings-card">
+                <button data-difficulty="easy">Easy</button>
+                <button data-difficulty="medium">Medium</button>
+                <button data-difficulty="hard">Hard</button>
+            </div>
+            <div class="wordle-settings-card">
+                <div>Wins: <span id="winScore">0</span></div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../js/wordle.js"></script>
+    <script src="../../js/darkmode.js"></script>
+    <script src="/js/essensials.js"></script>
+</body>
+</html>
