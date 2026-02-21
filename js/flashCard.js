@@ -44,17 +44,27 @@ async function buildCardSetButtons() {
 buildCardSetButtons();
 
 // ------------------ Load selected card set ------------------
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 async function loadCards(flashcardSet) {
     try {
         const res = await fetch(`../../js/Cards/${flashcardSet}.json`);
         if (!res.ok) throw new Error("HTTP error " + res.status);
 
         const data = await res.json();
-        cards = data.cards;
+
+        cards = [...data.cards];   // copy array
+        shuffleArray(cards);       // 🔥 shuffle once here
+
         currentCardIndex = 0;
         showCard(currentCardIndex);
 
-        // Show flashcards, hide selection
         cardSetSelection.style.display = "none";
         cardFlipSection.style.display = "block";
     } catch (err) {
