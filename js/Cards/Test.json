@@ -1,0 +1,61 @@
+{
+  "name": "Orthopedic cards CHAT GPT MADE",
+  "cards": [
+    { "front": "Dorsal rim fracture of the distal radius.", "back": "Barton's fracture" },
+    { "front": "Trimalleolar ankle fracture (medial, lateral, posterior malleolus).", "back": "Cotton's fracture" },
+    { "front": "Distal radius fracture from fall on outstretched hand (FOOSH).", "back": "Colles' fracture" },
+    { "front": "Double fracture of the pelvic ring causing pelvic instability.", "back": "Malgaigne's fracture" },
+    { "front": "Fracture of distal third of radius with distal radioulnar joint dislocation.", "back": "Galeazzi fracture" },
+    { "front": "Fracture of proximal ulna with radial head dislocation.", "back": "Monteggia fracture" },
+    { "front": "Fracture at base of 1st metacarpal with subluxation of thumb.", "back": "Bennett's fracture" },
+    { "front": "Fracture of distal fibula with ankle involvement.", "back": "Pott's fracture" },
+    { "front": "Proximal humerus fracture with 3 or more displaced fragments.", "back": "Neer fracture" },
+    { "front": "Compression fracture of cervical vertebra with anterior fragment separation.", "back": "Teardrop fracture" },
+
+    { "front": "Definition of traction.", "back": "Application of pulling force to align, reduce, and immobilize fractures using counter-traction." },
+    { "front": "Purposes of traction (3).", "back": "Reduce fracture, relieve muscle spasm, prevent/correct deformity." },
+    { "front": "Types of traction.", "back": "Skin traction and Skeletal traction." },
+    { "front": "Example of skin traction.", "back": "Buck's traction, Bryant's traction." },
+    { "front": "Example of skeletal traction.", "back": "Steinmann pin traction, Kirschner wire traction." },
+
+    { "front": "Traction equipment examples.", "back": "Thomas splint, Pearson attachment, Balkan frame, pulleys, ropes, weights, slings." },
+    { "front": "Parts of Balkan frame.", "back": "Horizontal bars, vertical bars, clamps, trapeze, pulleys, fracture board, shock blocks." },
+
+    { "front": "Nursing care in traction (priority checks).", "back": "Check alignment, ensure weights hang freely, assess skin integrity, perform neurovascular checks (5 Ps)." },
+    { "front": "5 Ps of neurovascular assessment.", "back": "Pain, Pallor, Pulselessness, Paresthesia, Paralysis." },
+
+    { "front": "Ilizarov external fixator indication.", "back": "Comminuted fractures, nonunion fractures, limb lengthening." },
+    { "front": "Halo vest traction indication.", "back": "Cervical spine fractures or instability." },
+    { "front": "Delta frame external fixator indication.", "back": "Tibia and fibula fractures." },
+    { "front": "Hybrid external fixator indication.", "back": "Fractures of tibia, ankle, knee." },
+    { "front": "Steinmann pin use.", "back": "Skeletal traction for adults." },
+    { "front": "Kirschner wire (K-wire) use.", "back": "Skeletal traction for pediatric patients or small bones." },
+
+    { "front": "Intramedullary nail purpose.", "back": "Internal fixation of long bone fractures (e.g., femur, tibia)." },
+    { "front": "Bone plate purpose.", "back": "Internal fixation for flat or long bones (radius, ulna)." },
+    { "front": "T-plate/Buttress plate indication.", "back": "Distal tibial fractures." },
+    { "front": "Spine rod pedicle screw fixation purpose.", "back": "Internal immobilization of spinal fractures." },
+    { "front": "Endoprosthesis for hemiarthroplasty.", "back": "Partial hip replacement (neck of femur fractures)." },
+
+    { "front": "Antibiotic beads purpose.", "back": "Local antibiotic delivery for osteomyelitis." },
+    { "front": "Antibiotic spacer purpose.", "back": "Temporary implant for infected prosthesis replacement." },
+
+    { "front": "Bryant's traction indication.", "back": "Developmental dysplasia of the hip (pediatric)." },
+    { "front": "Dunlop traction indication.", "back": "Supracondylar humerus fractures in children." },
+    { "front": "Bootleg traction indication.", "back": "Post-operative residual paralysis or hip conditions." },
+
+    { "front": "Plaster cast composition.", "back": "Gypsum (calcium sulfate) rendered anhydrous by calcination." },
+    { "front": "Cast care nursing interventions.", "back": "Handle with palms, keep dry, assess circulation, elevate limb, report foul odor or hot spots." },
+    { "front": "Early sign of compartment syndrome.", "back": "Severe unrelieved pain not relieved by analgesics." },
+    { "front": "Emergency complication of fracture.", "back": "Compartment syndrome." },
+    { "front": "Late complication of long bone fracture.", "back": "Fat embolism syndrome (respiratory distress, petechiae, confusion)." },
+
+    { "front": "Signs of fat embolism syndrome (classic triad).", "back": "Hypoxemia, neurologic changes, petechial rash." },
+    { "front": "Priority nursing action for suspected compartment syndrome.", "back": "Loosen restrictive dressing, notify physician immediately." },
+    { "front": "Open fracture priority management.", "back": "Sterile dressing, IV antibiotics, tetanus prophylaxis, prepare for surgery." },
+
+    { "front": "Common diagnostic test for fractures.", "back": "X-ray (primary), CT scan for complex fractures." },
+    { "front": "Purpose of splints.", "back": "Temporary immobilization to reduce pain and swelling." },
+    { "front": "Purpose of braces.", "back": "Provide support, stabilize joints, prevent deformity." }
+  ]
+}
