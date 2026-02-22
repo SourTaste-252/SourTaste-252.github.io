@@ -8,6 +8,8 @@ const cardWrapper = document.querySelector('.flashCard-wrapper');
 const frontDiv = cardWrapper.querySelector('.flashCard-flip-front');
 const backDiv = cardWrapper.querySelector('.flashCard-flip-back');
 
+const cardProgress = document.getElementById("card-progress");
+
 let cards = [];
 let currentCardIndex = 0;
 let touchStartX = 0;
@@ -72,19 +74,60 @@ async function loadCards(flashcardSet) {
         frontDiv.textContent = "Failed to load cards!";
         backDiv.textContent = "";
     }
+
+    updateProgress();
 }
 
 // ------------------ Display card ------------------
 function showCard(index) {
-    if (index >= cards.length) {
-        frontDiv.textContent = "No more cards!";
-        backDiv.textContent = "";
+    const total = cards.length;
+
+    if (index >= total) {
+        frontDiv.innerHTML = "No more cards!";
+        backDiv.innerHTML = "";
+        currentCardIndex = total; // Clamp to total
+        updateProgress();
         return;
     }
+
     const cardData = cards[index];
-    frontDiv.textContent = cardData.front;
-    backDiv.textContent = cardData.back;
+
+    // ---------- FRONT ----------
+    frontDiv.innerHTML = "";
+    const frontText = document.createElement("div");
+    frontText.textContent = cardData.front;
+    frontDiv.appendChild(frontText);
+
+    if (cardData.frontImg) {
+        const img = document.createElement("img");
+        img.src = cardData.frontImg;
+        img.classList.add("card-image");
+        frontDiv.appendChild(img);
+    }
+
+    // ---------- BACK ----------
+    backDiv.innerHTML = "";
+    const backText = document.createElement("div");
+    backText.textContent = cardData.back;
+    backDiv.appendChild(backText);
+
+    if (cardData.backImg) {
+        const img = document.createElement("img");
+        img.src = cardData.backImg;
+        img.classList.add("card-image");
+        backDiv.appendChild(img);
+    }
+
+    updateProgress();
 }
+
+function updateProgress() {
+    const total = cards.length;
+    const current = Math.min(currentCardIndex + 1, total); // clamp to total
+
+    cardProgress.textContent = `${current} / ${total}`;
+}
+
 
 // ------------------ Flip card ------------------
 cardWrapper.addEventListener("click", () => {
@@ -93,23 +136,21 @@ cardWrapper.addEventListener("click", () => {
 
 // ------------------ Swipe detection ------------------
 cardWrapper.addEventListener("touchstart", e => {
+    if (currentCardIndex >= cards.length) return; // 🚫 ignore swipe
     touchStartX = e.changedTouches[0].screenX;
     isDragging = true;
     cardWrapper.style.transition = "none";
 });
 
 cardWrapper.addEventListener("touchmove", e => {
-    if (!isDragging) return;
-
+    if (!isDragging || currentCardIndex >= cards.length) return; // 🚫 ignore swipe
     currentDragX = e.changedTouches[0].screenX - touchStartX;
 
     cardWrapper.style.transform =
         `translateX(${currentDragX}px) rotate(${currentDragX * 0.05}deg)`;
 
-    // Remove old glow
     cardWrapper.classList.remove("drag-left", "drag-right");
 
-    // Only show glow after threshold
     if (Math.abs(currentDragX) > glowThreshold) {
         if (currentDragX > 0) {
             cardWrapper.classList.add("drag-right");
@@ -120,6 +161,7 @@ cardWrapper.addEventListener("touchmove", e => {
 });
 
 cardWrapper.addEventListener("touchend", e => {
+    if (currentCardIndex >= cards.length) return; // 🚫 ignore swipe
     isDragging = false;
     touchEndX = e.changedTouches[0].screenX;
 
@@ -135,6 +177,8 @@ cardWrapper.addEventListener("touchend", e => {
 // ------------------ Handle swipe logic ------------------
 
 function handleSwipe() {
+    if (currentCardIndex >= cards.length) return; // 🚫 ignore swipe
+
     const deltaX = touchEndX - touchStartX;
     const swipeThreshold = 80;
 
@@ -150,21 +194,17 @@ function handleSwipe() {
 
 // ------------------ Next card ------------------
 function nextCard() {
-    // Apply blur immediately to back face to hide next card content
+    if (currentCardIndex >= cards.length) return; // stop if no more cards
+
     backDiv.style.filter = "blur(16px)";
 
-    // Add a slight delay to allow swipe animation to play
     setTimeout(() => {
-        // Move to next card
         currentCardIndex++;
         showCard(currentCardIndex);
 
-        // Reset classes to prepare for next flip
         cardWrapper.classList.remove("swipe-right", "swipe-left", "flipped");
-
-        // Remove blur after content has updated
         backDiv.style.filter = "";
-    }, 500); // matches swipe animation duration
+    }, 500);
 }
 
 // ------------------ Back to selection ------------------
@@ -175,6 +215,7 @@ backToSetsBtn.addEventListener("click", () => {
     // Reset card state
     cards = [];
     currentCardIndex = 0;
+    cardProgress.textContent = "0 / 0";
 
     // Buttons remain fixed; no rebuild needed
 });
@@ -186,6 +227,7 @@ prevCardBtn.addEventListener("click", () => {
     if (currentCardIndex > 0) {
         currentCardIndex--;
         showCard(currentCardIndex);
+        updateProgress();
 
         cardWrapper.classList.remove("flipped", "swipe-left", "swipe-right");
 
@@ -196,4 +238,4 @@ prevCardBtn.addEventListener("click", () => {
 
 
 // ------------------ Button event listener ------------------
-prevCardBtn.addEventListener('click', prevCard);
+prevCardBtn.addEventListener('click', prevCardBtn);
