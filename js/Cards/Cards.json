@@ -41,7 +41,7 @@
     { "front": "what is the mini Raef for?", "back": "Comminuted carpal and meracarpal" },
     { "front": "what is the Bootleg traction for?", "back": "post-op w/ residual paralysis" },
     { "front": "what is the Bryant Skin traction for?", "back": "Congenital hip dislocation" },
-    { "front": "what is the Dunlop traction for?", "back": "o treat, align, and immobilize severely displaced or unstable supracondylar fractures of the humerus (elbow fractures) in children." },
+    { "front": "what is the Dunlop traction for?", "back": "To treat, align, and immobilize severely displaced or unstable supracondylar fractures of the humerus (elbow fractures) in children." },
     { "front": "A temporary immobilizing device which is made up of gypsum silfate redered unhydrous by calcination", "back": "Plaster cast" },
     { "front": "what is this?", "frontImg": "../../assets/Card-img/Cortel.png", "back": "Cotrel Traction" },
     { "front": "what is this?", "frontImg": "../../assets/Card-img/HaloFemoral.png", "back": "Halo Femoral Traction" },
@@ -97,4 +97,5 @@
     { "front": "what is this?", "frontImg": "../../assets/Card-img/Yamamoto.png", "back": "Yamamoto" }
   ]
 }
+
 
